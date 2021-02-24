@@ -1,0 +1,46 @@
+block vars
+
+- const pageTitle = title ? `${title} · ${siteData.meta.title}` : siteData.meta.title
+- const pageDescription = description || siteData.meta.description
+- const pageKeywords = keywords || siteData.meta.keywords
+- const pageCard = cardImage || siteData.meta.cardImage
+- const themeColor = siteData.meta.themeColor
+
+include /mixins.pug
+
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    meta(name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover")
+    meta(name="keywords" content=pageKeywords)
+    meta(name="description" content=pageDescription)
+    meta(property="og:locale" content="en_EN")
+    meta(property="og:site_name" content=siteData.title)
+    meta(property="og:title" content=pageTitle)
+    meta(property="og:description" content=pageDescription)
+    meta(property="og:type" content="website")
+    meta(property="og:image" content=assetUrl(pageCard, "http"))
+    meta(property="og:image:secure_url" content=assetUrl(pageCard))
+    meta(property="og:image:width" content=400)
+    meta(property="og:image:height" content=400)
+    meta(name="twitter:site" content="@sqcrypto")
+    meta(name="twitter:card" content="summary_large_image")
+    meta(name="twitter:title" content=pageTitle)
+    meta(name="twitter:description" content=pageDescription)
+    meta(name="twitter:image" content=assetUrl(pageCard))
+    meta(name="msapplication-TileColor" content=themeColor)
+    meta(name="theme-color" content=themeColor)
+    link(rel="preload" as="font" crossorigin href=assetPath("/fonts/young-serif-regular.woff2"))
+    link(rel="preload" as="font" crossorigin href=assetPath("/fonts/source-code-pro-v11-latin-500.woff2"))
+    link(rel="preload" as="font" crossorigin href=assetPath("/fonts/source-code-pro-v11-latin-600.woff2"))
+    link(rel="apple-touch-icon" href=assetPath("/img/logo.svg"))
+    link(rel="icon" href=assetPath("/img/logo.svg"))
+    link(rel="manifest" href="site.webmanifest")
+    link(rel="mask-icon" href=assetPath("/img/favicon/safari-pinned-tab.svg") color=themeColor)
+    link(rel="stylesheet" href=assetPath("/css/main.css"))
+    title= pageTitle
+  body
+    main.main
+      block main

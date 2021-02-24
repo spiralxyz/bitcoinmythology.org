@@ -1,0 +1,41 @@
+@custom-media --up_to_M screen and (max-width: 699px);
+@custom-media --up_to_L screen and (max-width: 1099px);
+@custom-media --M_to_L screen and (min-width: 700px) and (max-width: 1099px);
+@custom-media --M_and_up screen and (min-width: 700px);
+@custom-media --L_and_up screen and (min-width: 1100px);
+
+:root {
+  --color-white: #fff;
+  --color-pale: #ecefdb;
+  --color-beige: #E0D1AE;
+  --color-pink: #F54073;
+  --color-green: #408566;
+  --color-mud: #425134;
+  --color-red: #BC4531;
+  --color-blue: #386475;
+  --color-yellow: #CCD0A5;
+  --color-tungsten: #311F28;
+
+  --color-body-text: var(--color-neutral-0);
+  --color-body-bg: var(--color-neutral-80);
+
+  --space-xs: 2px;
+  --space-s: 5px;
+  --space-m: 10px;
+  --space-l: 20px;
+  --space-xl: 40px;
+  --space-xxl: 60px;
+
+  --transition-duration-fast: 0.25s;
+  --transition-duration-medium: 0.75s;
+  --transition-duration-slow: 1.5s;
+
+  --font-family-head: 'Young Serif', serif;
+  --font-family-base: 'Source Code Pro', monospace;
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
