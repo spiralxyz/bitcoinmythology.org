@@ -33,7 +33,7 @@ html(lang="en")
     meta(name="msapplication-TileColor" content=themeColor)
     meta(name="theme-color" content=themeColor)
     link(rel="preload" as="font" crossorigin href=assetPath("/fonts/young-serif-regular.woff2"))
-    link(rel="preload" as="font" crossorigin href=assetPath("/fonts/source-code-pro-v11-latin-500.woff2"))
+    link(rel="preload" as="font" crossorigin href=assetPath("/fonts/source-code-pro-v11-latin-400.woff2"))
     link(rel="preload" as="font" crossorigin href=assetPath("/fonts/source-code-pro-v11-latin-600.woff2"))
     link(rel="apple-touch-icon" href=assetPath("/img/logo.svg"))
     link(rel="icon" href=assetPath("/img/logo.svg"))
@@ -41,6 +41,6 @@ html(lang="en")
     link(rel="mask-icon" href=assetPath("/img/favicon/safari-pinned-tab.svg") color=themeColor)
     link(rel="stylesheet" href=assetPath("/css/main.css"))
     title= pageTitle
-  body
+  body(id=pageId)
     main.main
       block main

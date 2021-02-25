@@ -22,7 +22,7 @@
     "build:styles": "postcss src/css/main.css --output dist/css/main.css",
     "optimize": "npm-run-all -p optimize:* -s rev",
     "optimize:styles": "csso dist/css/main.css --output dist/css/main.css",
-    "rev": "node-file-rev --root=dist/ dist/css/*.css dist/js/*.js dist/img/*.png dist/img/*.svg",
+    "rev": "node-file-rev --root=dist dist/css/*.css dist/js/*.js dist/img/*.png dist/img/*.svg dist/img/mining/*.png dist/img/mining/*.svg",
     "prod": "npm-run-all build optimize -s build:pages"
   },
   "devDependencies": {

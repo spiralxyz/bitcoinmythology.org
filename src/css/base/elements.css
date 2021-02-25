@@ -7,9 +7,11 @@
 }
 
 html {
-  line-height: 1.5;
   font-family: var(--font-family-base);
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.7;
+  letter-spacing: -0.01rem;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -20,6 +22,7 @@ body {
   flex-direction: column;
   width: 100%;
   color: var(--color-body-text);
+  background-color: var(--color-body-bg);
 }
 
 h1,
@@ -29,7 +32,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-family-head);
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-head);
   line-height: 1;
 
   & a {
@@ -38,38 +41,12 @@ h6 {
   }
 }
 
-h1 {
-  font-size: var(--font-size-xxxl);
-}
-
-h2 {
-  font-size: var(--font-size-xxl);
-}
-
-h3 {
-  font-size: var(--font-size-xl);
-}
-
-h4 {
-  font-size: var(--font-size-l);
-}
-
-h5, h6 {
-  font-size: var(--font-size-m);
-}
-
 a {
   outline: 0;
   color: inherit;
-  text-decoration: underline;
-  transition-property: background, color;
+  text-decoration: none;
+  transition-property: color;
   transition-duration: var(--transition-duration-fast);
-
-  &:hover {
-    @media not all and (hover: none) {
-      text-decoration: underline;
-    }
-  }
 
   & svg {
     transition-property: background, color;

@@ -6,18 +6,23 @@
 
 :root {
   --color-white: #fff;
-  --color-pale: #ecefdb;
+  --color-pale: #EAE9DF;
   --color-beige: #E0D1AE;
   --color-pink: #F54073;
   --color-green: #408566;
   --color-mud: #425134;
   --color-red: #BC4531;
+  --color-yellow: #FEB44D;
+  --color-orange: #F88D5F;
   --color-blue: #386475;
-  --color-yellow: #CCD0A5;
+  --color-greygreen: #CCD0A5;
+  --color-teal: #749386;
   --color-tungsten: #311F28;
+  --color-evergreen: #0E2B28;
+  --color-darkgreen: #123636;
 
-  --color-body-text: var(--color-neutral-0);
-  --color-body-bg: var(--color-neutral-80);
+  --color-body-text: var(--color-tungsten);
+  --color-body-bg: var(--color-beige);
 
   --space-xs: 2px;
   --space-s: 5px;
@@ -33,9 +38,11 @@
   --font-family-head: 'Young Serif', serif;
   --font-family-base: 'Source Code Pro', monospace;
 
-  --font-weight-light: 300;
   --font-weight-normal: 400;
-  --font-weight-medium: 500;
   --font-weight-semibold: 600;
-  --font-weight-bold: 700;
+  --font-weight-head: 700;
+
+  --font-size-title: 5rem;
+  --font-size-head: 2.5rem;
+  --font-size-base: 16px;
 }

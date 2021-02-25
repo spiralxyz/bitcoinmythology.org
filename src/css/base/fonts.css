@@ -1,23 +1,9 @@
 /* https://google-webfonts-helper.herokuapp.com/fonts/source-code-pro?subsets=latin */
 @font-face {
   font-family: 'Source Code Pro';
-  font-weight: 300;
-  src: url('/fonts/source-code-pro-v11-latin-300.woff2') format('woff2'),
-       url('/fonts/source-code-pro-v11-latin-300.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Source Code Pro';
   font-weight: 400;
   src: url('/fonts/source-code-pro-v11-latin-400.woff2') format('woff2'),
        url('/fonts/source-code-pro-v11-latin-400.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Source Code Pro';
-  font-weight: 500;
-  src: url('/fonts/source-code-pro-v11-latin-500.woff2') format('woff2'),
-       url('/fonts/source-code-pro-v11-latin-500.woff') format('woff');
 }
 
 @font-face {
@@ -28,15 +14,8 @@
 }
 
 @font-face {
-  font-family: 'Source Code Pro';
-  font-weight: 700;
-  src: url('/fonts/source-code-pro-v11-latin-700.woff2') format('woff2'),
-       url('/fonts/source-code-pro-v11-latin-700.woff') format('woff');
-}
-
-@font-face {
   font-family: 'Young Serif';
-  font-weight: 400;
-  src: url('/fonts/young-seerif-regular.woff2') format('woff2'),
-       url('/fonts/young-seerif-regular.woff') format('woff');
+  font-weight: 700;
+  src: url('/fonts/young-serif-regular.woff2') format('woff2'),
+       url('/fonts/young-serif-regular.woff') format('woff');
 }
