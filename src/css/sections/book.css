@@ -34,7 +34,7 @@ section {
     & .content {
       position: relative;
       background-repeat: no-repeat;
-      max-width: 34rem;
+      max-width: 33rem;
     }
 
     & h2 {
@@ -46,7 +46,7 @@ section {
         display: block;
         margin-bottom: .2rem;
         text-transform: uppercase;
-        font-size: .425em;
+        font-size: var(--font-size-subhead);
       }
     }
 
@@ -58,6 +58,7 @@ section {
     & p {
       margin-left: auto;
       margin-right: auto;
+      margin-bottom: var(--space-l);
     }
   }
 
@@ -108,38 +109,79 @@ section {
   }
 }
 
-.title {
-  font-size: var(--font-size-title);
-  margin-top: var(--space-xxl);
-  margin-bottom: var(--space-xxl);
-}
-
-.title,
-.volume {
-  color: var(--color-pink);
-  text-align: center;
-}
-
-.prelude {
-  color: var(--color-green);
-  text-align: center;
-}
-
-.volume,
-.prelude {
-  font-weight: var(--font-weight-semibold);
-  text-transform: uppercase;
-}
-
 #title,
 #end {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: 50%;
+  position: relative;
+  overflow: hidden;
 
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  & .bg {
+    --width: 1830px;
+    --height: 965px;
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    z-index: 0;
+    top: calc(50% - var(--height) / 2);
+    left: calc(48% - var(--width) / 2);
+    background-repeat: no-repeat;
+    background-size: var(--width) var(--height);
+
+    & .coin1 {
+      position: absolute;
+      left: 51%;
+      top: 8%;
+    }
+
+    & .coin2 {
+      position: absolute;
+      left: 91.3%;
+      top: 34%;
+    }
+
+    & .coin3 {
+      position: absolute;
+      left: 57%;
+      top: 84%;
+    }
+
+    & .coin4 {
+      position: absolute;
+      left: 10%;
+      top: 57%;
+    }
+  }
+
+  & .content {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & .title {
+    font-size: var(--font-size-title);
+    margin-top: var(--space-xxl);
+    margin-bottom: var(--space-xxl);
+  }
+
+  & .title,
+  & .volume {
+    color: var(--color-pink);
+    text-align: center;
+  }
+
+  & .prelude {
+    color: var(--color-green);
+    text-align: center;
+  }
+
+  & .volume,
+  & .prelude {
+    font-size: var(--font-size-subtitle);
+    text-transform: uppercase;
+  }
 }
 
 #introduction {
@@ -153,14 +195,25 @@ section {
 
   & .wrap::after {
     content: "1";
-    color: var(--color-green);
+    color: var(--color-mud);
   }
 }
 
 #meet-the-myths {
+  --color-lead: var(--color-mud);
+  --color-text: var(--color-mud);
+  --color-bg: var(--color-beige);
+
   padding-top: 100px;
-  color: var(--color-mud);
   text-align: center;
+  line-height: 1.55;
+
+  & h2,
+  & a {
+    font-size: var(--font-size-nav);
+    font-family: var(--font-family-head);
+    font-weight: var(--font-weight-medium);
+  }
 
   & h2 {
     margin-bottom: 3rem;
@@ -168,10 +221,7 @@ section {
 
   & a {
     display: block;
-    color: inherit;
-    font-family: var(--font-family-head);
-    font-weight: var(--font-weight-head);
-    font-size: var(--font-size-head);
+    color: var(--color-text);
 
     &:hover,
     &:focus {
@@ -191,7 +241,7 @@ section {
   }
 
   & .content {
-    padding-top: 120px;
+    padding-top: 100px;
     background-size: 32rem;
     background-position: 33% 0;
   }
@@ -209,8 +259,9 @@ section {
 
   & .content {
     padding-top: 120px;
-    background-size: 32rem;
-    background-position: 33% 0;
+    background-size: 20rem;
+    background-position: 90% 0;
+    max-width: 39rem;
   }
 }
 

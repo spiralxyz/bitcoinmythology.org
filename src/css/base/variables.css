@@ -24,12 +24,10 @@
   --color-body-text: var(--color-tungsten);
   --color-body-bg: var(--color-beige);
 
-  --space-xs: 2px;
-  --space-s: 5px;
   --space-m: 10px;
-  --space-l: 20px;
+  --space-l: 1.8rem;
   --space-xl: 40px;
-  --space-xxl: 60px;
+  --space-xxl: 5rem;
 
   --transition-duration-fast: 0.25s;
   --transition-duration-medium: 0.75s;
@@ -38,11 +36,12 @@
   --font-family-head: 'Young Serif', serif;
   --font-family-base: 'Source Code Pro', monospace;
 
-  --font-weight-normal: 400;
-  --font-weight-semibold: 600;
-  --font-weight-head: 700;
+  --font-weight-medium: 500;
 
-  --font-size-title: 5rem;
-  --font-size-head: 2.5rem;
-  --font-size-base: 16px;
+  --font-size-title: 7.5rem;
+  --font-size-subtitle: 1.4rem;
+  --font-size-head: 3.4rem;
+  --font-size-subhead: 1.4rem;
+  --font-size-nav: 2.7rem;
+  --font-size-base: 18px;
 }

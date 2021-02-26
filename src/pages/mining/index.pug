@@ -3,12 +3,19 @@ extends /template.pug
 block vars
   - const pageId = 'volume1'
   - const title = 'Bitcoin Mining'
+  - const volume = 'Volume 1'
 
 block main
-  section#title(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
-    span.prelude= siteData.meta.description
-    h1.title= title
-    span.volume Volume 1
+  section#title
+    .bg(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
+      img.coin1(src=assetPath("/img/mining/coin.png") alt="")
+      img.coin2(src=assetPath("/img/mining/coin.png") alt="")
+      img.coin3(src=assetPath("/img/mining/coin.png") alt="")
+      img.coin4(src=assetPath("/img/mining/coin.png") alt="")
+    .content
+      span.prelude= siteData.meta.description
+      h1.title= title
+      span.volume= volume
 
   section#intro.content-content
     article#introduction
@@ -45,6 +52,7 @@ block main
             [3. Warewolves](#warewolves)
             [4. Ent-a-cops](#ent-a-cops)
             [5. Ampires](#ampires)
+            [6. Fiat Fairies](#fiat-fairies)
 
   section#scale-a-manders.content-figure
     article
@@ -191,7 +199,13 @@ block main
     figure
       img(src=assetPath("/img/mining/fiat-fairies.png") alt="Fiat Fairies" loading="lazy")
 
-  section#end(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
-    span.prelude= siteData.meta.description
-    h3.title The End
-    span.volume Volume 1
+  section#end
+    .bg(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
+      img.coin1(src=assetPath("/img/mining/coin.png") alt="")
+      img.coin2(src=assetPath("/img/mining/coin.png") alt="")
+      img.coin3(src=assetPath("/img/mining/coin.png") alt="")
+      img.coin4(src=assetPath("/img/mining/coin.png") alt="")
+    .content
+      span.prelude= siteData.meta.description
+      h3.title The End
+      span.volume= volume

@@ -9,9 +9,8 @@
 html {
   font-family: var(--font-family-base);
   font-size: var(--font-size-base);
-  font-weight: var(--font-weight-semibold);
-  line-height: 1.7;
-  letter-spacing: -0.01rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.8;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -32,7 +31,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-family-head);
-  font-weight: var(--font-weight-head);
+  font-weight: var(--font-weight-medium);
   line-height: 1;
 
   & a {
@@ -51,29 +50,6 @@ a {
   & svg {
     transition-property: background, color;
     transition-duration: var(--transition-duration-fast);
-  }
-}
-
-p {
-  margin-bottom: var(--space-l);
-}
-
-ul {
-  margin-left: var(--space-m);
-  margin-bottom: var(--space-l);
-}
-
-p,
-ul {
-  & + h2 {
-    margin-top: var(--space-xl);
-  }
-
-  & + h3,
-  & + h4,
-  & + h5,
-  & + h6 {
-    margin-top: var(--space-l);
   }
 }
 
