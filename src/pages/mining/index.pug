@@ -7,15 +7,16 @@ block vars
 
 block main
   section#title
-    .bg(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
-      img.coin1(src=assetPath("/img/mining/coin.png") alt="")
-      img.coin2(src=assetPath("/img/mining/coin.png") alt="")
-      img.coin3(src=assetPath("/img/mining/coin.png") alt="")
-      img.coin4(src=assetPath("/img/mining/coin.png") alt="")
-    .content
-      span.prelude= siteData.meta.description
-      h1.title= title
-      span.volume= volume
+    article
+      .bg(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
+        img.coin1(src=assetPath("/img/mining/coin.png") alt="")
+        img.coin2(src=assetPath("/img/mining/coin.png") alt="")
+        img.coin3(src=assetPath("/img/mining/coin.png") alt="")
+        img.coin4(src=assetPath("/img/mining/coin.png") alt="")
+      .content
+        span.prelude= siteData.meta.description
+        h1.title= title
+        span.volume= volume
 
   section#intro.content-content
     article#introduction
@@ -200,12 +201,13 @@ block main
       img(src=assetPath("/img/mining/fiat-fairies.png") alt="Fiat Fairies" loading="lazy")
 
   section#end
-    .bg(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
-      img.coin1(src=assetPath("/img/mining/coin.png") alt="")
-      img.coin2(src=assetPath("/img/mining/coin.png") alt="")
-      img.coin3(src=assetPath("/img/mining/coin.png") alt="")
-      img.coin4(src=assetPath("/img/mining/coin.png") alt="")
-    .content
-      span.prelude= siteData.meta.description
-      h3.title The End
-      span.volume= volume
+    article
+      .bg(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
+        img.coin1(src=assetPath("/img/mining/coin.png") alt="")
+        img.coin2(src=assetPath("/img/mining/coin.png") alt="")
+        img.coin3(src=assetPath("/img/mining/coin.png") alt="")
+        img.coin4(src=assetPath("/img/mining/coin.png") alt="")
+      .content
+        span.prelude= siteData.meta.description
+        h3.title The End
+        span.volume= volume

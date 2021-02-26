@@ -2,14 +2,17 @@
 section {
   display: flex;
   width: 100vw;
-  height: 100vh;
   color: var(--color-text);
   background-color: var(--color-bg);
+
+  @media (--up_to_L) {
+    flex-wrap: wrap;
+  }
 
   /* text page */
   & article {
     display: flex;
-    flex: 1 1 50%;
+    height: 100vh;
     padding: var(--space-l);
 
     /* text container */
@@ -28,6 +31,10 @@ section {
         bottom: 3rem;
         left: 49%;
         font-family: var(--font-family-head);
+
+        @media (--up_to_L) {
+          display: none;
+        }
       }
     }
 
@@ -67,7 +74,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1 1 50%;
+    height: 100vh;
     padding: var(--space-l);
 
     & img {
@@ -77,34 +84,48 @@ section {
     }
   }
 
-  &.content-content {
-    & > article {
-      &:first-child {
+  @media (--up_to_L) {
+    & article,
+    & figure {
+      flex: 1 1 100%;
+    }
+  }
+
+  @media (--L_and_up) {
+    & article,
+    & figure {
+      flex: 1 1 50%;
+    }
+
+    &.content-content {
+      & > article {
+        &:first-child {
+          justify-content: flex-end;
+        }
+        &:last-child {
+          justify-content: flex-start;
+        }
+      }
+    }
+
+    &.content-figure {
+      & > article {
         justify-content: flex-end;
       }
-      &:last-child {
+      & > figure {
         justify-content: flex-start;
       }
     }
-  }
 
-  &.content-figure {
-    & > article {
-      justify-content: flex-end;
-    }
-    & > figure {
-      justify-content: flex-start;
-    }
-  }
-
-  &.figure-content {
-    & > figure {
-      order: 1;
-      justify-content: flex-end;
-    }
-    & > article {
-      order: 2;
-      justify-content: flex-start;
+    &.figure-content {
+      & > figure {
+        order: 1;
+        justify-content: flex-end;
+      }
+      & > article {
+        order: 2;
+        justify-content: flex-start;
+      }
     }
   }
 }
@@ -153,11 +174,11 @@ section {
 
   & .content {
     flex: 1;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    max-width: 100%;
   }
 
   & .title {
@@ -336,9 +357,4 @@ section {
 
 #end {
   background-color: var(--color-evergreen);
-}
-
-@media (--up_to_M) {
-}
-@media (--M_and_up) {
 }
