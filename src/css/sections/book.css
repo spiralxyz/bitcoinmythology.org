@@ -12,23 +12,26 @@ section {
   /* text page */
   & article {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
+    align-items: center;
     padding: var(--space-l);
+    background-position: 50%;
+    background-repeat: no-repeat;
 
     /* text container */
      & .wrap {
       flex: 1;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       position: relative;
-      background-repeat: no-repeat;
       max-height: 1000px;
 
       /* page number, displayed via `content` */
       &::after {
         position: absolute;
-        bottom: 3rem;
+        bottom: -6rem;
         left: 49%;
         font-family: var(--font-family-head);
 
@@ -42,6 +45,12 @@ section {
       position: relative;
       background-repeat: no-repeat;
       max-width: 33rem;
+    }
+
+    & .glyph {
+      position: relative;
+      display: block;
+      margin: 0 auto var(--space-l);
     }
 
     & h2 {
@@ -73,7 +82,6 @@ section {
   & figure {
     display: flex;
     align-items: center;
-    justify-content: center;
     height: 100vh;
     padding: var(--space-l);
 
@@ -88,6 +96,8 @@ section {
     & article,
     & figure {
       flex: 1 1 100%;
+      align-items: center;
+      justify-content: center;
     }
   }
 
@@ -210,9 +220,11 @@ section {
   --color-text: var(--color-tungsten);
   --color-bg: var(--color-beige);
 
-  padding-top: 120px;
-  background-size: 43rem;
-  background-position: 57% 0;
+  background-position: 50% 58%;
+
+  & .glyph {
+    width: 2.5rem;
+  }
 
   & .wrap::after {
     content: "1";
@@ -225,6 +237,7 @@ section {
   --color-text: var(--color-mud);
   --color-bg: var(--color-beige);
 
+  background-position: 65% 55%;
   padding-top: 100px;
   text-align: center;
   line-height: 1.55;
@@ -256,15 +269,13 @@ section {
   --color-text: var(--color-tungsten);
   --color-bg: var(--color-beige);
 
+  & article{
+    background-position: 33% 50%;
+  }
+
   & .wrap::after {
     content: "3";
     color: var(--color-green);
-  }
-
-  & .content {
-    padding-top: 100px;
-    background-size: 32rem;
-    background-position: 33% 0;
   }
 }
 
@@ -273,16 +284,17 @@ section {
   --color-text: var(--color-tungsten);
   --color-bg: var(--color-beige);
 
-  & .wrap::after {
-    content: "6";
-    color: var(--color-blue);
+  & article {
+    background-position: 90% 20%;
   }
 
   & .content {
-    padding-top: 120px;
-    background-size: 20rem;
-    background-position: 90% 0;
     max-width: 39rem;
+  }
+
+  & .wrap::after {
+    content: "6";
+    color: var(--color-blue);
   }
 }
 
@@ -291,15 +303,17 @@ section {
   --color-text: var(--color-greygreen);
   --color-bg: var(--color-blue);
 
+  & article {
+    background-position: 50% 50%;
+  }
+
+  & .glyph {
+    left: -3rem;
+  }
+
   & .wrap::after {
     content: "7";
     color: var(--color-yellow);
-  }
-
-  & .content {
-    padding-top: 120px;
-    background-size: 32rem;
-    background-position: 33% 0;
   }
 }
 
@@ -308,16 +322,17 @@ section {
   --color-text: var(--color-greygreen);
   --color-bg: var(--color-blue);
 
+  & article {
+    background-position: 75% 85%;
+  }
+
+  & .glyph {
+    left: -1rem;
+  }
+
   & .wrap::after {
     content: "10";
     color: var(--color-yellow);
-  }
-
-  & .content {
-    padding-top: 120px;
-    padding-bottom: 120px;
-    background-size: contain;
-    background-position: 100%;
   }
 }
 
@@ -326,15 +341,18 @@ section {
   --color-text: var(--color-darkgreen);
   --color-bg: var(--color-teal);
 
+  & article {
+    background-position: 50%;
+    margin-bottom: 3rem;
+  }
+
+  & .glyph {
+    left: -1rem;
+  }
+
   & .wrap::after {
     content: "11";
     color: var(--color-darkgreen);
-  }
-
-  & .content {
-    padding-top: 120px;
-    background-size: 32rem;
-    background-position: 33% 0;
   }
 }
 
@@ -343,15 +361,13 @@ section {
   --color-text: var(--color-darkgreen);
   --color-bg: var(--color-teal);
 
+  & article{
+    background-position: 75% 85%;
+  }
+
   & .wrap::after {
     content: "14";
     color: var(--color-darkgreen);
-  }
-
-  & .content {
-    padding-top: 120px;
-    background-size: 32rem;
-    background-position: 33% 0;
   }
 }
 
