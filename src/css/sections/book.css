@@ -17,6 +17,16 @@ section {
     background-position: 50%;
     background-repeat: no-repeat;
 
+    @media (--up_to_M) {
+      --bg-scale: .675;
+    }
+    @media (--M_to_L) {
+      --bg-scale: .85;
+    }
+    @media (--L_and_up) {
+      --bg-scale: 1;
+    }
+
     /* text container */
      & .wrap {
       flex: 1;
@@ -252,7 +262,8 @@ section {
   }
 
   & .wrap {
-    background-position: 50% 1%, 50% 63%;
+    background-position: 49% 2%, 50% 63%;
+    background-size: calc(826px * var(--bg-scale)) calc(151px * var(--bg-scale)),  calc(853px * var(--bg-scale)) calc(167px * var(--bg-scale));
   }
 
   & .wrap::after {
@@ -266,10 +277,11 @@ section {
   --color-text: var(--color-mud);
   --color-bg: var(--color-beige);
 
-  background-position: 65% 55%;
-  padding-top: 100px;
+  background-position: 55% 60%;
+  background-size: calc(790px * var(--bg-scale)) calc(774px * var(--bg-scale));
   text-align: center;
   line-height: 1.55;
+  padding-top: 5rem;
 
   & h2,
   & a {
@@ -298,8 +310,19 @@ section {
   --color-text: var(--color-tungsten);
   --color-bg: var(--color-beige);
 
-  & article{
-    background-position: 33% 50%;
+  & article {
+    @media (--up_to_M) {
+      --bg-scale: .825;
+    }
+    @media (--M_to_L) {
+      --bg-scale: .9;
+    }
+    @media (--L_and_up) {
+      --bg-scale: 1;
+    }
+
+    background-position: 50% 50%;
+    background-size: calc(722px * var(--bg-scale)) calc(606px * var(--bg-scale));
   }
 
   & .wrap::after {
@@ -314,7 +337,8 @@ section {
   --color-bg: var(--color-beige);
 
   & article {
-    background-position: 90% 20%;
+    background-position: 90% 15%;
+    /* background-size: calc(101px * var(--bg-scale)) calc(37px * var(--bg-scale)); */
   }
 
   & .content {
@@ -339,7 +363,15 @@ section {
   --color-bg: var(--color-blue);
 
   & article {
+    @media (--up_to_M) {
+      --bg-scale: .825;
+    }
+    @media (--M_to_L) {
+      --bg-scale: .9;
+    }
+
     background-position: 50% 50%;
+    background-size: calc(440px * var(--bg-scale)) calc(814px * var(--bg-scale));
   }
 
   & .glyph {
@@ -358,7 +390,7 @@ section {
   --color-bg: var(--color-blue);
 
   & article {
-    background-position: 75% 85%;
+    background-position: 80% 88%;
   }
 
   & .glyph {
@@ -383,8 +415,13 @@ section {
   --color-bg: var(--color-teal);
 
   & article {
-    background-position: 50%;
+    @media (--up_to_M) {
+      --bg-scale: .75;
+    }
+
     margin-bottom: 3rem;
+    background-position: 50%;
+    background-size: calc(440px * var(--bg-scale)) calc(814px * var(--bg-scale));
   }
 
   & .glyph {
