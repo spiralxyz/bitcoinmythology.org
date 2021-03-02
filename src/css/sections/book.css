@@ -14,7 +14,6 @@ section {
     display: flex;
     min-height: 100vh;
     align-items: center;
-    padding: var(--space-l);
     background-position: 50%;
     background-repeat: no-repeat;
 
@@ -27,6 +26,8 @@ section {
       justify-content: center;
       position: relative;
       max-height: 1000px;
+      padding: var(--space-l);
+      background-repeat: no-repeat;
 
       /* page number, displayed via `content` */
       &::after {
@@ -34,10 +35,6 @@ section {
         bottom: -6rem;
         left: 49%;
         font-family: var(--font-family-head);
-
-        @media (--up_to_L) {
-          display: none;
-        }
       }
     }
 
@@ -87,8 +84,8 @@ section {
 
     & img {
       display: block;
-      width: 100%;
-      max-width: 800px;
+      max-width: 95%;
+      max-height: 95%;
     }
   }
 
@@ -146,37 +143,52 @@ section {
   overflow: hidden;
 
   & .bg {
-    --width: 1830px;
-    --height: 965px;
-    width: var(--width);
-    height: var(--height);
+    @media (--up_to_M) {
+      --scale: .5;
+    }
+    @media (--M_to_L) {
+      --scale: 1;
+    }
+    @media (--L_and_up) {
+      --scale: 1;
+    }
+
+    --bg-w: calc(1830px * var(--scale));
+    --bg-h: calc(965px * var(--scale));
+    width: var(--bg-w);
+    height: var(--bg-h);
     position: absolute;
     z-index: 0;
-    top: calc(50% - var(--height) / 2);
-    left: calc(48% - var(--width) / 2);
+    top: calc(50% - var(--bg-h) / 2);
+    left: calc(48% - var(--bg-w) / 2);
+    background-size: var(--bg-w) var(--bg-h);
     background-repeat: no-repeat;
-    background-size: var(--width) var(--height);
+
+    & .coin1,
+    & .coin2,
+    & .coin3,
+    & .coin4 {
+      position: absolute;
+      width: calc(54px * var(--scale));
+      height: calc(51px * var(--scale));
+    }
 
     & .coin1 {
-      position: absolute;
       left: 51%;
       top: 8%;
     }
 
     & .coin2 {
-      position: absolute;
       left: 91.3%;
       top: 34%;
     }
 
     & .coin3 {
-      position: absolute;
       left: 57%;
       top: 84%;
     }
 
     & .coin4 {
-      position: absolute;
       left: 10%;
       top: 57%;
     }
@@ -193,8 +205,16 @@ section {
 
   & .title {
     font-size: var(--font-size-title);
-    margin-top: var(--space-xxl);
-    margin-bottom: var(--space-xxl);
+
+    @media (--up_to_M) {
+      margin: var(--space-xl) 0;
+    }
+    @media (--M_to_L) {
+      margin: var(--space-xl) 0;
+    }
+    @media (--L_and_up) {
+      margin: var(--space-xxl) 0;
+    }
   }
 
   & .title,
@@ -206,12 +226,17 @@ section {
   & .prelude {
     color: var(--color-green);
     text-align: center;
+
+    @media (--up_to_M) {
+      margin-top: var(--space-xl);
+    }
   }
 
   & .volume,
   & .prelude {
     font-size: var(--font-size-subtitle);
     text-transform: uppercase;
+    line-height: 1.4;
   }
 }
 
@@ -220,10 +245,14 @@ section {
   --color-text: var(--color-tungsten);
   --color-bg: var(--color-beige);
 
-  background-position: 50% 58%;
+  background-position: 67% 90%;
 
   & .glyph {
     width: 2.5rem;
+  }
+
+  & .wrap {
+    background-position: 50% 1%, 50% 63%;
   }
 
   & .wrap::after {
@@ -293,8 +322,14 @@ section {
   }
 
   & .wrap::after {
-    content: "6";
     color: var(--color-blue);
+
+    @media (--up_to_L) {
+      content: "5";
+    }
+    @media (--L_and_up) {
+      content: "6";
+    }
   }
 }
 
@@ -331,8 +366,14 @@ section {
   }
 
   & .wrap::after {
-    content: "10";
     color: var(--color-yellow);
+
+    @media (--up_to_L) {
+      content: "9";
+    }
+    @media (--L_and_up) {
+      content: "10";
+    }
   }
 }
 
@@ -366,8 +407,14 @@ section {
   }
 
   & .wrap::after {
-    content: "14";
     color: var(--color-darkgreen);
+
+    @media (--up_to_L) {
+      content: "13";
+    }
+    @media (--L_and_up) {
+      content: "14";
+    }
   }
 }
 

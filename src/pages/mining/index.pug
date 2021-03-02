@@ -3,24 +3,27 @@ extends /template.pug
 block vars
   - const pageId = 'volume1'
   - const title = 'Bitcoin Mining'
-  - const volume = 'Volume 1'
+  - const bg = imgs => `background-image:${imgs.map(i => `url(${assetPath(`/img/mining/${i}`)})`).join(',')};`
+
+mixin title(text)
+  article
+    .bg(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
+      img.coin1(src=assetPath("/img/mining/coin@2x.png") alt="")
+      img.coin2(src=assetPath("/img/mining/coin@2x.png") alt="")
+      img.coin3(src=assetPath("/img/mining/coin@2x.png") alt="")
+      img.coin4(src=assetPath("/img/mining/coin@2x.png") alt="")
+    .content
+      span.prelude The Square Crypto Book of Bitcoin&nbsp;Mythology
+      h1.title= title
+      span.volume Volume 1
 
 block main
   section#title
-    article
-      .bg(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
-        img.coin1(src=assetPath("/img/mining/coin.png") alt="")
-        img.coin2(src=assetPath("/img/mining/coin.png") alt="")
-        img.coin3(src=assetPath("/img/mining/coin.png") alt="")
-        img.coin4(src=assetPath("/img/mining/coin.png") alt="")
-      .content
-        span.prelude= siteData.meta.description
-        h1.title= title
-        span.volume= volume
+    +title(title)
 
   section#intro.content-content
-    article#introduction(style=`background-image:url(${assetPath("/img/mining/introduction-bg.svg")})`)
-      .wrap
+    article#introduction(style=bg(['introduction-bg-bottom.svg']))
+      .wrap(style=bg(['introduction-bg-top.svg', 'introduction-bg-center.svg']))
         .content
           img.glyph(src=assetPath("/img/mining/introduction-glyph.png") alt="")
           :markdown-it(html linkify typographer)
@@ -43,7 +46,7 @@ block main
             myths about bitcoin than those having to do with its
             environmental impact, we started there.
 
-    article#meet-the-myths(style=`background-image:url(${assetPath("/img/mining/meet-the-myths-bg.svg")})`)
+    article#meet-the-myths(style=bg(['meet-the-myths-bg.svg']))
       .wrap
         .content
           :markdown-it(html linkify typographer)
@@ -57,7 +60,7 @@ block main
             [6. Fiat Fairies](#fiat-fairies)
 
   section#scale-a-manders.content-figure
-    article(style=`background-image:url(${assetPath("/img/mining/scale-a-manders-bg.svg")})`)
+    article(style=bg(['scale-a-manders-bg.svg']))
       .wrap
         .content
           img.glyph(src=assetPath("/img/mining/scale-a-manders-glyph.svg") alt="")
@@ -80,7 +83,7 @@ block main
       img(src=assetPath("/img/mining/scale-a-manders.png") alt="Scale-a-manders" loading="lazy")
 
   section#green-giants.figure-content
-    article(style=`background-image:url(${assetPath("/img/mining/green-giants-bg.svg")})`)
+    article(style=bg(['green-giants-bg.svg']))
       .wrap
         .content
           img.glyph(src=assetPath("/img/mining/green-giants-glyph.svg") alt="")
@@ -108,7 +111,7 @@ block main
       img(src=assetPath("/img/mining/green-giants.png") alt="Green Giants" loading="lazy")
 
   section#warewolves.content-figure
-    article(style=`background-image:url(${assetPath("/img/mining/warewolves-bg.svg")})`)
+    article(style=bg(['warewolves-bg.svg']))
       .wrap
         .content
           img.glyph(src=assetPath("/img/mining/warewolves-glyph.svg") alt="")
@@ -133,7 +136,7 @@ block main
       img(src=assetPath("/img/mining/warewolves.png") alt="Warewolves" loading="lazy")
 
   section#ent-a-cops.figure-content
-    article(style=`background-image:url(${assetPath("/img/mining/ent-a-cops-bg.svg")})`)
+    article(style=bg(['ent-a-cops-bg-bg.svg']))
       .wrap
         .content
           img.glyph(src=assetPath("/img/mining/ent-a-cops-glyph.svg") alt="")
@@ -159,7 +162,7 @@ block main
       img(src=assetPath("/img/mining/ent-a-cops.png") alt="Ent-a-cops" loading="lazy")
 
   section#ampires.content-figure
-    article(style=`background-image:url(${assetPath("/img/mining/ampires-bg.svg")})`)
+    article(style=bg(['ampires-bg.svg']))
       .wrap
         .content
           img.glyph(src=assetPath("/img/mining/ampires-glyph.png") alt="")
@@ -184,7 +187,7 @@ block main
       img(src=assetPath("/img/mining/ampires.png") alt="Ampires" loading="lazy")
 
   section#fiat-fairies.figure-content
-    article(style=`background-image:url(${assetPath("/img/mining/fiat-fairies-bg.svg")})`)
+    article(style=bg(['fiat-fairies-bg.svg']))
       .wrap
         .content
           img.glyph(src=assetPath("/img/mining/fiat-fairies-glyph.svg") alt="")
@@ -208,13 +211,4 @@ block main
       img(src=assetPath("/img/mining/fiat-fairies.png") alt="Fiat Fairies" loading="lazy")
 
   section#end
-    article
-      .bg(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
-        img.coin1(src=assetPath("/img/mining/coin.png") alt="")
-        img.coin2(src=assetPath("/img/mining/coin.png") alt="")
-        img.coin3(src=assetPath("/img/mining/coin.png") alt="")
-        img.coin4(src=assetPath("/img/mining/coin.png") alt="")
-      .content
-        span.prelude= siteData.meta.description
-        h3.title The End
-        span.volume= volume
+    +title('The End')

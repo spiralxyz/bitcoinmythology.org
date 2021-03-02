@@ -1,7 +1,7 @@
-@custom-media --up_to_M screen and (max-width: 699px);
+@custom-media --up_to_M screen and (max-width: 639px);
 @custom-media --up_to_L screen and (max-width: 1199px);
-@custom-media --M_to_L screen and (min-width: 700px) and (max-width: 1199px);
-@custom-media --M_and_up screen and (min-width: 700px);
+@custom-media --M_to_L screen and (min-width: 640px) and (max-width: 1199px);
+@custom-media --M_and_up screen and (min-width: 640px);
 @custom-media --L_and_up screen and (min-width: 1200px);
 
 :root {
@@ -24,9 +24,9 @@
   --color-body-text: var(--color-tungsten);
   --color-body-bg: var(--color-beige);
 
-  --space-m: 10px;
+  --space-m: 1rem;
   --space-l: 1.8rem;
-  --space-xl: 40px;
+  --space-xl: 3rem;
   --space-xxl: 5rem;
 
   --transition-duration-fast: 0.25s;
@@ -38,10 +38,28 @@
 
   --font-weight-medium: 500;
 
-  --font-size-title: 7.5rem;
-  --font-size-subtitle: 1.4rem;
-  --font-size-head: 3.4rem;
-  --font-size-subhead: 1.4rem;
-  --font-size-nav: 2.7rem;
-  --font-size-base: 18px;
+  @media (--up_to_M) {
+    --font-size-base: 13px;
+    --font-size-title: 5rem;
+    --font-size-subtitle: 1rem;
+    --font-size-head: 2.8rem;
+    --font-size-subhead: 1.4rem;
+    --font-size-nav: 2.3rem;
+  }
+  @media (--M_to_L) {
+    --font-size-base: 15px;
+    --font-size-title: 6.5rem;
+    --font-size-subtitle: 1.4rem;
+    --font-size-head: 3.4rem;
+    --font-size-subhead: 1.4rem;
+    --font-size-nav: 2.7rem;
+  }
+  @media (--L_and_up) {
+    --font-size-base: 18px;
+    --font-size-title: 7.5rem;
+    --font-size-subtitle: 1.4rem;
+    --font-size-head: 3.4rem;
+    --font-size-subhead: 1.4rem;
+    --font-size-nav: 2.7rem;
+  }
 }
