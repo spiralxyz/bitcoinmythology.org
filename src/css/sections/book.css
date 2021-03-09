@@ -1,7 +1,67 @@
-/* container for two page */
+main {
+  position: relative;
+
+  @media (--up_to_L) {
+    & > section > article,
+    & > section > figure {
+      position: absolute !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      z-index: 0;
+      transition: opacity .5s;
+      width: 100vw;
+      height: 100vh;
+
+      &:target {
+        opacity: 1;
+        z-index: 1;
+      }
+    }
+
+    & > section {
+      position: absolute !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      z-index: 0;
+      transition: opacity .5s;
+      width: 100vw;
+      height: 100vh;
+
+      &:target > article {
+        opacity: 1;
+        z-index: 1;
+      }
+    }
+  }
+  @media (--L_and_up) {
+    & > section {
+      position: absolute !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      z-index: 0;
+      transition: opacity .5s;
+      width: 100vw;
+      height: 100vh;
+
+      &:target {
+        opacity: 1;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+/* container for two pages */
 section {
   display: flex;
   width: 100vw;
+  height: 100vh;
   color: var(--color-text);
   background-color: var(--color-bg);
 
@@ -149,7 +209,6 @@ section {
 
 #title,
 #end {
-  position: relative;
   overflow: hidden;
 
   & .bg {
@@ -250,57 +309,58 @@ section {
   }
 }
 
-#introduction {
+#intro {
   --color-lead: var(--color-green);
   --color-text: var(--color-tungsten);
   --color-bg: var(--color-beige);
 
-  background-position: 67% 90%;
+  & article#intro-1 {
+    background-position: 67% 90%;
 
-  & .glyph {
-    width: 2.5rem;
+    & .glyph {
+      width: 2.5rem;
+    }
+
+    & .wrap {
+      background-position: 49% 2%, 50% 63%;
+      background-size: calc(826px * var(--bg-scale)) calc(151px * var(--bg-scale)),  calc(853px * var(--bg-scale)) calc(167px * var(--bg-scale));
+    }
+
+    & .wrap::after {
+      content: "1";
+      color: var(--color-mud);
+    }
   }
 
-  & .wrap {
-    background-position: 49% 2%, 50% 63%;
-    background-size: calc(826px * var(--bg-scale)) calc(151px * var(--bg-scale)),  calc(853px * var(--bg-scale)) calc(167px * var(--bg-scale));
-  }
+  & article#intro-2 {
+    --color-lead: var(--color-mud);
+    --color-text: var(--color-mud);
 
-  & .wrap::after {
-    content: "1";
-    color: var(--color-mud);
-  }
-}
+    background-position: 55% 60%;
+    background-size: calc(790px * var(--bg-scale)) calc(774px * var(--bg-scale));
+    text-align: center;
+    line-height: 1.55;
+    padding-top: 5rem;
 
-#meet-the-myths {
-  --color-lead: var(--color-mud);
-  --color-text: var(--color-mud);
-  --color-bg: var(--color-beige);
+    & h2,
+    & a {
+      font-size: var(--font-size-nav);
+      font-family: var(--font-family-head);
+      font-weight: var(--font-weight-medium);
+    }
 
-  background-position: 55% 60%;
-  background-size: calc(790px * var(--bg-scale)) calc(774px * var(--bg-scale));
-  text-align: center;
-  line-height: 1.55;
-  padding-top: 5rem;
+    & h2 {
+      margin-bottom: 3rem;
+    }
 
-  & h2,
-  & a {
-    font-size: var(--font-size-nav);
-    font-family: var(--font-family-head);
-    font-weight: var(--font-weight-medium);
-  }
+    & a {
+      display: block;
+      color: var(--color-text);
 
-  & h2 {
-    margin-bottom: 3rem;
-  }
-
-  & a {
-    display: block;
-    color: var(--color-text);
-
-    &:hover,
-    &:focus {
-      color: var(--color-pink);
+      &:hover,
+      &:focus {
+        color: var(--color-pink);
+      }
     }
   }
 }
@@ -419,7 +479,6 @@ section {
       --bg-scale: .75;
     }
 
-    margin-bottom: 3rem;
     background-position: 50%;
     background-size: calc(440px * var(--bg-scale)) calc(814px * var(--bg-scale));
   }
