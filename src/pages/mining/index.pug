@@ -7,19 +7,17 @@ block vars
   - const bg = imgs => `background-image:${imgs.map(i => `url(${assetPath(`/img/mining/${i}`)})`).join(',')};`
 
 mixin title(section, text)
-  section(id=section)
-    +navPage(section)
-    article(id=`${section}-1`)
-      +navPage(section, 1)
-      .bg(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
-        img.coin1(src=assetPath("/img/mining/coin@2x.png") alt="")
-        img.coin2(src=assetPath("/img/mining/coin@2x.png") alt="")
-        img.coin3(src=assetPath("/img/mining/coin@2x.png") alt="")
-        img.coin4(src=assetPath("/img/mining/coin@2x.png") alt="")
-      .content
-        span.prelude The Square&nbsp;Crypto Book of Bitcoin&nbsp;Mythology
-        h1.title= title
-        span.volume Volume 1
+  article(id=`${section}-1`)
+    +navPage(section, 1)
+    .bg(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
+      img.coin1(src=assetPath("/img/mining/coin@2x.png") alt="")
+      img.coin2(src=assetPath("/img/mining/coin@2x.png") alt="")
+      img.coin3(src=assetPath("/img/mining/coin@2x.png") alt="")
+      img.coin4(src=assetPath("/img/mining/coin@2x.png") alt="")
+    .content
+      span.prelude The Square&nbsp;Crypto Book of Bitcoin&nbsp;Mythology
+      h1.title= title
+      span.volume Volume 1
 
 mixin navPage(section, num)
   - const index = sections.indexOf(section)
@@ -42,214 +40,200 @@ mixin navPage(section, num)
 block main
   +title('title', title)
 
-  section#intro.content-content
-    +navPage('intro')
-    article#intro-1(style=bg(['introduction-bg-bottom.svg']))
-      +navPage('intro', 1)
-      .wrap(style=bg(['introduction-bg-top.svg', 'introduction-bg-center.svg']))
-        .content
-          img.glyph(src=assetPath("/img/mining/introduction-glyph.png") alt="")
-          :markdown-it(html linkify typographer)
-            ## Introduction
+  article#intro-1(style=bg(['introduction-bg-bottom.svg']))
+    +navPage('intro', 1)
+    .wrap(style=bg(['introduction-bg-top.svg', 'introduction-bg-center.svg']))
+      .content
+        img.glyph(src=assetPath("/img/mining/introduction-glyph.png") alt="")
+        :markdown-it(html linkify typographer)
+          ## Introduction
 
-            *"Bitcoin. It's borderless. It's decentralized. And it's
-            going to end the world by releasing an endless stream
-            of smoking hot CO2 into the atmosphere."*
+          *"Bitcoin. It's borderless. It's decentralized. And it's
+          going to end the world by releasing an endless stream
+          of smoking hot CO2 into the atmosphere."*
 
-            You've probably heard something like this a few times
-            before. But is it true? Well, no. Not really. The truth
-            is that bitcoin miners are like any other market
-            participants: to last, they have to maximize
-            efficiency. That means embracing green energy in a big
-            way.
+          You've probably heard something like this a few times
+          before. But is it true? Well, no. Not really. The truth
+          is that bitcoin miners are like any other market
+          participants: to last, they have to maximize
+          efficiency. That means embracing green energy in a big
+          way.
 
-            This is the first volume in a series about bitcoin
-            myths and the mythical creatures proliferating them.
-            Since there are no more prominent or more prevalent
-            myths about bitcoin than those having to do with its
-            environmental impact, we started there.
+          This is the first volume in a series about bitcoin
+          myths and the mythical creatures proliferating them.
+          Since there are no more prominent or more prevalent
+          myths about bitcoin than those having to do with its
+          environmental impact, we started there.
 
-    article#intro-2(style=bg(['meet-the-myths-bg.svg']))
-      +navPage('intro', 2)
-      .wrap
-        .content
-          :markdown-it(html linkify typographer)
-            ## Meet the myths
+  article#intro-2(style=bg(['meet-the-myths-bg.svg']))
+    +navPage('intro', 2)
+    .wrap
+      .content
+        :markdown-it(html linkify typographer)
+          ## Meet the myths
 
-            [1. Scale-a-manders](#scale-a-manders)
-            [2. Green Giants](#green-giants)
-            [3. Warewolves](#warewolves)
-            [4. Ent-a-cops](#ent-a-cops)
-            [5. Ampires](#ampires)
-            [6. Fiat Fairies](#fiat-fairies)
+          [1. Scale-a-manders](#scale-a-manders-1)
+          [2. Green Giants](#green-giants-1)
+          [3. Warewolves](#warewolves-1)
+          [4. Ent-a-cops](#ent-a-cops-1)
+          [5. Ampires](#ampires-1)
+          [6. Fiat Fairies](#fiat-fairies-1)
 
-  section#scale-a-manders.content-figure
-    +navPage('scale-a-manders')
-    article#scale-a-manders-1(style=bg(['scale-a-manders-bg.svg']))
-      +navPage('scale-a-manders', 1)
-      .wrap
-        .content
-          img.glyph(src=assetPath("/img/mining/scale-a-manders-glyph.svg") alt="")
-          :markdown-it(html linkify typographer)
-            ## Scale-a-manders
+  article#scale-a-manders-1(style=bg(['scale-a-manders-bg.svg']))
+    +navPage('scale-a-manders', 1)
+    .wrap
+      .content
+        img.glyph(src=assetPath("/img/mining/scale-a-manders-glyph.svg") alt="")
+        :markdown-it(html linkify typographer)
+          ## Scale-a-manders
 
-            *"Bitcoin can't ssssssssssscale."*
+          *"Bitcoin can't ssssssssssscale."*
 
-            Scale-a-manders are among the oldest and most pervasive
-            mythological bitcoin creatures. But despite their
-            frequent claims to the contrary, bitcoin was designed
-            to "sssscale" and scale a lot.
+          Scale-a-manders are among the oldest and most pervasive
+          mythological bitcoin creatures. But despite their
+          frequent claims to the contrary, bitcoin was designed
+          to "sssscale" and scale a lot.
 
-            That's because bitcoin transaction volume is
-            independent of energy usage. This means that bitcoin
-            can accommodate 100, 1,000, or even 10,000-fold more
-            transactions without increasing its energy use.
+          That's because bitcoin transaction volume is
+          independent of energy usage. This means that bitcoin
+          can accommodate 100, 1,000, or even 10,000-fold more
+          transactions without increasing its energy use.
 
-    figure#scale-a-manders-2
-      +navPage('scale-a-manders', 2)
-      img(src=assetPath("/img/mining/scale-a-manders.png") alt="Scale-a-manders" loading="lazy")
+  figure#scale-a-manders-2
+    +navPage('scale-a-manders', 2)
+    img(src=assetPath("/img/mining/scale-a-manders.png") alt="Scale-a-manders" loading="lazy")
 
-  section#green-giants.figure-content
-    +navPage('green-giants')
-    article#green-giants-1(style=bg(['green-giants-bg.svg']))
-      +navPage('green-giants', 1)
-      .wrap
-        .content
-          img.glyph(src=assetPath("/img/mining/green-giants-glyph.svg") alt="")
-          h2
-            small Far-From-Jolly
-            span Green Giants
+  article#green-giants-1
+    +navPage('green-giants', 1)
+    .wrap(style=bg(['green-giants-bg.svg']))
+      .content
+        img.glyph(src=assetPath("/img/mining/green-giants-glyph.svg") alt="")
+        h2
+          small Far-From-Jolly
+          span Green Giants
 
-          :markdown-it(html linkify typographer)
-            *"Fee-fi-fo-fum. Bitcoin miners don't utilize green energy, son."*
+        :markdown-it(html linkify typographer)
+          *"Fee-fi-fo-fum. Bitcoin miners don't utilize green energy, son."*
 
-            They're big. They're green. And they're right to be concerned
-            about where bitcoin miners get their electricity. But bitcoin
-            is actually greener than they (and most people) realize.
+          They're big. They're green. And they're right to be concerned
+          about where bitcoin miners get their electricity. But bitcoin
+          is actually greener than they (and most people) realize.
 
-            In order to stay competitive, bitcoin miners must seek out
-            abundant and inexpensive forms of energy. And there's no
-            energy source more abundant or inexpensive than green energy.
-            This means that any miner who wants to profit — whether they
-            care about the environment or not—has to help squash bitcoin's
-            carbon footprint.
+          In order to stay competitive, bitcoin miners must seek out
+          abundant and inexpensive forms of energy. And there's no
+          energy source more abundant or inexpensive than green energy.
+          This means that any miner who wants to profit — whether they
+          care about the environment or not—has to help squash bitcoin's
+          carbon footprint.
 
-            Far out, dude.
+          Far out, dude.
 
-    figure#green-giants-2
-      +navPage('green-giants', 2)
-      img(src=assetPath("/img/mining/green-giants.png") alt="Green Giants" loading="lazy")
+  figure#green-giants-2
+    +navPage('green-giants', 2)
+    img(src=assetPath("/img/mining/green-giants.png") alt="Green Giants" loading="lazy")
 
-  section#warewolves.content-figure
-    +navPage('warewolves')
-    article#warewolves-1(style=bg(['warewolves-bg.svg']))
-      +navPage('warewolves', 1)
-      .wrap
-        .content
-          img.glyph(src=assetPath("/img/mining/warewolves-glyph.svg") alt="")
-          :markdown-it(html linkify typographer)
-            ## Warewolves
+  article#warewolves-1(style=bg(['warewolves-bg.svg']))
+    +navPage('warewolves', 1)
+    .wrap
+      .content
+        img.glyph(src=assetPath("/img/mining/warewolves-glyph.svg") alt="")
+        :markdown-it(html linkify typographer)
+          ## Warewolves
 
-            *"To recoup costs, bitcoin miners must run around the clock."*
+          *"To recoup costs, bitcoin miners must run around the clock."*
 
-            These dogged myths claim that bitcoin miners must run 24/7
-            to recoup hardware costs. And they'd be right if this were
-            2016. What they're missing is that hardware improvements
-            naturally plateau over time, extending miner life cycles
-            from 6 months to about four years (and climbing).
+          These dogged myths claim that bitcoin miners must run 24/7
+          to recoup hardware costs. And they'd be right if this were
+          2016. What they're missing is that hardware improvements
+          naturally plateau over time, extending miner life cycles
+          from 6 months to about four years (and climbing).
 
-            This makes electricity the costliest part of mining,
-            giving miners to shut down when costs rise and making
-            bitcoin mining one of the only solutions to the renewable
-            energy supply/demand mismatch problem. Low demand? Miners
-            on. High demand? Miners off.
+          This makes electricity the costliest part of mining,
+          giving miners to shut down when costs rise and making
+          bitcoin mining one of the only solutions to the renewable
+          energy supply/demand mismatch problem. Low demand? Miners
+          on. High demand? Miners off.
 
-    figure#warewolves-2
-      +navPage('warewolves', 2)
-      img(src=assetPath("/img/mining/warewolves.png") alt="Warewolves" loading="lazy")
+  figure#warewolves-2
+    +navPage('warewolves', 2)
+    img(src=assetPath("/img/mining/warewolves.png") alt="Warewolves" loading="lazy")
 
-  section#ent-a-cops.figure-content
-    +navPage('ent-a-cops')
-    article#ent-a-cops-1(style=bg(['ent-a-cops-bg.svg']))
-      +navPage('ent-a-cops', 1)
-      .wrap
-        .content
-          img.glyph(src=assetPath("/img/mining/ent-a-cops-glyph.svg") alt="")
-          :markdown-it(html linkify typographer)
-            ## Ent-a-cops
+  article#ent-a-cops-1
+    +navPage('ent-a-cops', 1)
+    .wrap(style=bg(['ent-a-cops-bg.svg']))
+      .content
+        img.glyph(src=assetPath("/img/mining/ent-a-cops-glyph.svg") alt="")
+        :markdown-it(html linkify typographer)
+          ## Ent-a-cops
 
-            *"Bitcoin's using too much ent-ergy!"*
+          *"Bitcoin's using too much ent-ergy!"*
 
-            These mythological beasts can't see the woods for the
-            trees—maybe that's because they are trees. Their beef
-            with bitcoin: how much energy it consumes. Though they
-            have good intentions, their concern is a little
-            misplaced: it's CO2 that's the problem, not energy
-            consumption.
+          These mythological beasts can't see the woods for the
+          trees—maybe that's because they are trees. Their beef
+          with bitcoin: how much energy it consumes. Though they
+          have good intentions, their concern is a little
+          misplaced: it's CO2 that's the problem, not energy
+          consumption.
 
-            If bitcoin consumed 100x more energy but emitted zero
-            CO2, would these worried sick-a-mores care? Probably
-            not. And if demand for renewable energy did spike
-            100-fold, so would investments in green technology. And
-            that benefits everyone—specially trees.
+          If bitcoin consumed 100x more energy but emitted zero
+          CO2, would these worried sick-a-mores care? Probably
+          not. And if demand for renewable energy did spike
+          100-fold, so would investments in green technology. And
+          that benefits everyone—specially trees.
 
-    figure#ent-a-cops-2
-      +navPage('ent-a-cops', 2)
-      img(src=assetPath("/img/mining/ent-a-cops.png") alt="Ent-a-cops" loading="lazy")
+  figure#ent-a-cops-2
+    +navPage('ent-a-cops', 2)
+    img(src=assetPath("/img/mining/ent-a-cops.png") alt="Ent-a-cops" loading="lazy")
 
-  section#ampires.content-figure
-    +navPage('ampires')
-    article#ampires-1(style=bg(['ampires-bg.svg']))
-      +navPage('ampires', 1)
-      .wrap
-        .content
-          img.glyph(src=assetPath("/img/mining/ampires-glyph.png") alt="")
-          :markdown-it(html linkify typographer)
-            ## Ampires
+  article#ampires-1(style=bg(['ampires-bg.svg']))
+    +navPage('ampires', 1)
+    .wrap
+      .content
+        img.glyph(src=assetPath("/img/mining/ampires-glyph.png") alt="")
+        :markdown-it(html linkify typographer)
+          ## Ampires
 
-            *"That electricity belongs elsewhere. Like Transylvania."*
+          *"That electricity belongs elsewhere. Like Transylvania."*
 
-            These undying myths want energy consumed by bitcoin
-            allocated to other green initiatives like electric
-            vehicles. Hey, we like electric cars. But what they don't
-            know is that renewable energy consumed by bitcoin rarely
-            has other customers—not even one.
+          These undying myths want energy consumed by bitcoin
+          allocated to other green initiatives like electric
+          vehicles. Hey, we like electric cars. But what they don't
+          know is that renewable energy consumed by bitcoin rarely
+          has other customers—not even one.
 
-            It's either unwanted due to transportation and storage
-            costs, or it just isn't in demand. If there are customers
-            for that energy, then it goes to the highest bidder. In
-            almost all cases, bitcoin miners won't be the highest
-            bidders. So put away the stake.
+          It's either unwanted due to transportation and storage
+          costs, or it just isn't in demand. If there are customers
+          for that energy, then it goes to the highest bidder. In
+          almost all cases, bitcoin miners won't be the highest
+          bidders. So put away the stake.
 
-    figure#ampires-2
-      +navPage('ampires', 2)
-      img(src=assetPath("/img/mining/ampires.png") alt="Ampires" loading="lazy")
+  figure#ampires-2
+    +navPage('ampires', 2)
+    img(src=assetPath("/img/mining/ampires.png") alt="Ampires" loading="lazy")
 
-  section#fiat-fairies.figure-content
-    +navPage('fiat-fairies')
-    article#fiat-fairies-1(style=bg(['fiat-fairies-bg.svg']))
-      +navPage('fiat-fairies', 1)
-      .wrap
-        .content
-          img.glyph(src=assetPath("/img/mining/fiat-fairies-glyph.svg") alt="")
-          :markdown-it(html linkify typographer)
-            ## Fiat Fairies
+  article#fiat-fairies-1
+    +navPage('fiat-fairies', 1)
+    .wrap(style=bg(['fiat-fairies-bg.svg']))
+      .content
+        img.glyph(src=assetPath("/img/mining/fiat-fairies-glyph.svg") alt="")
+        :markdown-it(html linkify typographer)
+          ## Fiat Fairies
 
-            *"Bitcoin consumes more energy than traditional currencies."*
+          *"Bitcoin consumes more energy than traditional currencies."*
 
-            The truth about government-issued currencies is that they
-            aren't backed by much more than a promise. And when they
-            are, the things that back them are militaries, police
-            forces, arcane legal systems, unaccountable banks, and
-            mints they can fire up at will.
+          The truth about government-issued currencies is that they
+          aren't backed by much more than a promise. And when they
+          are, the things that back them are militaries, police
+          forces, arcane legal systems, unaccountable banks, and
+          mints they can fire up at will.
 
-            All of these things consume vast amounts of energy—and
-            it's rarely green. When bitcoin becomes the planet's
-            preferred currency, it will come at the expense of
-            fiat-dependent systems like these. And once they're gone,
-            like real fairies, you'll probably never see them again.
-    figure#fiat-fairies-2
-      +navPage('fiat-fairies', 2)
-      img(src=assetPath("/img/mining/fiat-fairies.png") alt="Fiat Fairies" loading="lazy")
+          All of these things consume vast amounts of energy—and
+          it's rarely green. When bitcoin becomes the planet's
+          preferred currency, it will come at the expense of
+          fiat-dependent systems like these. And once they're gone,
+          like real fairies, you'll probably never see them again.
+  figure#fiat-fairies-2
+    +navPage('fiat-fairies', 2)
+    img(src=assetPath("/img/mining/fiat-fairies.png") alt="Fiat Fairies" loading="lazy")
 
   +title('end', 'The End')
