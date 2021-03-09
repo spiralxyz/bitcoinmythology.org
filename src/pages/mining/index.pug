@@ -21,26 +21,21 @@ mixin title(section, text)
 
 mixin navPage(section, num)
   - const index = sections.indexOf(section)
-  nav
-    if num
-      - const prevSection = index > 0 ? sections[(num === 1 ? index - 1 : index)] : null
-      - const nextSection = index < sections.length - 1 ? sections[(num === 2 ? index + 1 : index)] : null
-      if prevSection
-        a.prev(href=`#${prevSection}-${num === 1 ? 2 : 1}`) PREV
-      if nextSection
-        a.next(href=`#${nextSection}-${num === 2 ? 1 : 2}`) NEXT
-    else
-      - const prevSection = index > 0 ? sections[index - 1] : null
-      - const nextSection = index < sections.length - 1 ? sections[index + 1] : null
-      if prevSection
-        a.prev(href=`#${prevSection}`) PREV
-      if nextSection
-        a.next(href=`#${nextSection}`) NEXT
+  - const prevSectionS = index > 0 ? sections[(num === 1 ? index - 1 : index)] : null
+  - const prevSectionL = index > 0 ? sections[index - 1] : null
+  - const nextSectionS = index < sections.length - 1 ? sections[(index == 0 || num === 2 ? index + 1 : index)] : null
+  - const nextSectionL = index < sections.length - 1 ? sections[index + 1] : null
+  if prevSectionS
+    a.prev.nav-s(href=`#${prevSectionS}-${num === 1 && index > 1 ? 2 : 1}`) PREV
+  if prevSectionL
+    a.prev.nav-l(href=`#${prevSectionL}-1`) PREV
+  if nextSectionS
+    a.next.nav-s(href=`#${nextSectionS}-${num === 1 && index > 0 ? 2 : 1}`) NEXT
+  if nextSectionL
+    a.next.nav-l(href=`#${nextSectionL}-1`) NEXT
 
 block main
-  +title('title', title)
-
-  article#intro-1(style=bg(['introduction-bg-bottom.svg']))
+  article#intro-1.page-1.page-left(style=bg(['introduction-bg-bottom.svg']))
     +navPage('intro', 1)
     .wrap(style=bg(['introduction-bg-top.svg', 'introduction-bg-center.svg']))
       .content
@@ -65,7 +60,7 @@ block main
           myths about bitcoin than those having to do with its
           environmental impact, we started there.
 
-  article#intro-2(style=bg(['meet-the-myths-bg.svg']))
+  article#intro-2.page-2.page-right(style=bg(['meet-the-myths-bg.svg']))
     +navPage('intro', 2)
     .wrap
       .content
@@ -79,7 +74,7 @@ block main
           [5. Ampires](#ampires-1)
           [6. Fiat Fairies](#fiat-fairies-1)
 
-  article#scale-a-manders-1(style=bg(['scale-a-manders-bg.svg']))
+  article#scale-a-manders-1.page-1.page-left(style=bg(['scale-a-manders-bg.svg']))
     +navPage('scale-a-manders', 1)
     .wrap
       .content
@@ -99,11 +94,11 @@ block main
           can accommodate 100, 1,000, or even 10,000-fold more
           transactions without increasing its energy use.
 
-  figure#scale-a-manders-2
+  figure#scale-a-manders-2.page-2.page-right
     +navPage('scale-a-manders', 2)
     img(src=assetPath("/img/mining/scale-a-manders.png") alt="Scale-a-manders" loading="lazy")
 
-  article#green-giants-1
+  article#green-giants-1.page-1.page-right
     +navPage('green-giants', 1)
     .wrap(style=bg(['green-giants-bg.svg']))
       .content
@@ -128,11 +123,11 @@ block main
 
           Far out, dude.
 
-  figure#green-giants-2
+  figure#green-giants-2.page-2.page-left
     +navPage('green-giants', 2)
     img(src=assetPath("/img/mining/green-giants.png") alt="Green Giants" loading="lazy")
 
-  article#warewolves-1(style=bg(['warewolves-bg.svg']))
+  article#warewolves-1.page-1.page-left(style=bg(['warewolves-bg.svg']))
     +navPage('warewolves', 1)
     .wrap
       .content
@@ -154,11 +149,11 @@ block main
           energy supply/demand mismatch problem. Low demand? Miners
           on. High demand? Miners off.
 
-  figure#warewolves-2
+  figure#warewolves-2.page-2.page-right
     +navPage('warewolves', 2)
     img(src=assetPath("/img/mining/warewolves.png") alt="Warewolves" loading="lazy")
 
-  article#ent-a-cops-1
+  article#ent-a-cops-1.page-1.page-right
     +navPage('ent-a-cops', 1)
     .wrap(style=bg(['ent-a-cops-bg.svg']))
       .content
@@ -181,11 +176,11 @@ block main
           100-fold, so would investments in green technology. And
           that benefits everyone—specially trees.
 
-  figure#ent-a-cops-2
+  figure#ent-a-cops-2.page-2.page-left
     +navPage('ent-a-cops', 2)
     img(src=assetPath("/img/mining/ent-a-cops.png") alt="Ent-a-cops" loading="lazy")
 
-  article#ampires-1(style=bg(['ampires-bg.svg']))
+  article#ampires-1.page-1.page-left(style=bg(['ampires-bg.svg']))
     +navPage('ampires', 1)
     .wrap
       .content
@@ -207,11 +202,11 @@ block main
           almost all cases, bitcoin miners won't be the highest
           bidders. So put away the stake.
 
-  figure#ampires-2
+  figure#ampires-2.page-2.page-right
     +navPage('ampires', 2)
     img(src=assetPath("/img/mining/ampires.png") alt="Ampires" loading="lazy")
 
-  article#fiat-fairies-1
+  article#fiat-fairies-1.page-1.page-right
     +navPage('fiat-fairies', 1)
     .wrap(style=bg(['fiat-fairies-bg.svg']))
       .content
@@ -232,8 +227,9 @@ block main
           preferred currency, it will come at the expense of
           fiat-dependent systems like these. And once they're gone,
           like real fairies, you'll probably never see them again.
-  figure#fiat-fairies-2
+  figure#fiat-fairies-2.page-2.page-left
     +navPage('fiat-fairies', 2)
     img(src=assetPath("/img/mining/fiat-fairies.png") alt="Fiat Fairies" loading="lazy")
 
+  +title('title', title)
   +title('end', 'The End')
