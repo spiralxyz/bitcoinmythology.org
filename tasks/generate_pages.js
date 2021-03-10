@@ -3,11 +3,12 @@ const { mkdirSync, writeFileSync } = require('fs')
 const { dirname, resolve } = require('path')
 const config = require('../pug.config')
 
-const renderPage = (name, data = {}) => {
+const renderPage = (name, out = null, data = {}) => {
   const file = resolve(__dirname, '..', `src/pages/${name}.pug`)
   const options = Object.assign({}, config, data)
   const rendered = pug.renderFile(file, options)
-  const dst = resolve(__dirname, '..', 'dist', `${name}.html`)
+  const target = `${out || name}.html`
+  const dst = resolve(__dirname, '..', 'dist', target)
   const dir = dirname(dst)
 
   mkdirSync(dir, { recursive: true })
@@ -17,3 +18,4 @@ const renderPage = (name, data = {}) => {
 // home
 renderPage('index')
 renderPage('mining/index')
+renderPage('mining/index', 'mining/book', { mainClass: 'book' })

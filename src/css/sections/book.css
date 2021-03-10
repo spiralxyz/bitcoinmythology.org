@@ -38,7 +38,7 @@ main {
 /* text page */
 article {
   display: flex;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   align-items: center;
   color: var(--color-text);
   background-color: var(--color-bg);
@@ -118,7 +118,6 @@ article {
 figure {
   display: flex;
   align-items: center;
-  height: 100vh;
   padding: var(--space-l);
   color: var(--color-text);
   background-color: var(--color-bg);
@@ -130,102 +129,121 @@ figure {
   }
 }
 
-article,
-figure {
-  position: absolute !important;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  z-index: 0;
-  transition: opacity .5s;
-  height: 100vh;
-
-  &.page-1,
-  &.page-2 {
-    @media (--up_to_L) {
-      width: 100vw;
-    }
-    @media (--L_and_up) {
-      width: 50vw;
-    }
+main:not(.book) {
+  & .prev,
+  & .next {
+    display: none !important;
   }
 
-  /* show title when there is no target */
-  &#title-1 {
-    opacity: 1;
-    z-index: 1;
+  & article,
+  & figure {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    & .wrap::after {
+      bottom: -4rem;
+    }
   }
-  /* if there is a target hide title */
-  &:target ~ #title-1 {
+}
+
+main.book {
+  & article,
+  & figure {
+    position: absolute !important;
+    top: 0;
+    left: 0;
     opacity: 0;
     z-index: 0;
-  }
-  /* always display selected target */
-  &:target {
-    opacity: 1;
-    z-index: 2;
-  }
+    transition: opacity .5s;
+    height: 100vh;
 
-  @media (--L_and_up) {
-    &.page-1:target {
-      left: 0;
-
-      &.page-left .next {
-        display: none;
+    &.page-1,
+    &.page-2 {
+      @media (--up_to_L) {
+        width: 100vw;
       }
+      @media (--L_and_up) {
+        width: 50vw;
+      }
+    }
 
-      & + .page-2 {
-        opacity: 1;
-        z-index: 1;
-        right: 0;
+    /* show title when there is no target */
+    &#title-1 {
+      opacity: 1;
+      z-index: 1;
+    }
+    /* if there is a target hide title */
+    &:target ~ #title-1 {
+      opacity: 0;
+      z-index: 0;
+    }
+    /* always display selected target */
+    &:target {
+      opacity: 1;
+      z-index: 2;
+    }
 
-        & .prev {
+    @media (--L_and_up) {
+      &.page-1:target {
+        left: 0;
+
+        &.page-left .next {
+          display: none;
+        }
+
+        & + .page-2 {
+          opacity: 1;
+          z-index: 1;
+          right: 0;
+
+          & .prev {
+            display: none;
+          }
+        }
+      }
+    }
+
+    & .prev,
+    & .next {
+      position: absolute;
+      z-index: 10;
+      padding: 10px;
+      width: 80px;
+      height: 60px;
+      text-align: center;
+
+      @media (--up_to_L) {
+        &.nav-l {
+          display: none;
+        }
+      }
+      @media (--L_and_up) {
+        &.nav-s {
           display: none;
         }
       }
     }
-  }
 
-  & .prev,
-  & .next {
-    position: absolute;
-    z-index: 10;
-    padding: 10px;
-    width: 80px;
-    height: 60px;
-    text-align: center;
-
-    @media (--up_to_L) {
-      &.nav-l {
-        display: none;
+    & .prev {
+      @media (--up_to_L) {
+        top: 10px;
+        left: calc(50% - 40px);
+      }
+      @media (--L_and_up) {
+        top: calc(50% - 30px);
+        left: 10px;
       }
     }
-    @media (--L_and_up) {
-      &.nav-s {
-        display: none;
+
+    & .next {
+      @media (--up_to_L) {
+        bottom: 10px;
+        left: calc(50% - 40px);
       }
-    }
-  }
-
-  & .prev {
-    @media (--up_to_L) {
-      top: 10px;
-      left: calc(50% - 40px);
-    }
-    @media (--L_and_up) {
-      top: calc(50% - 30px);
-      left: 10px;
-    }
-  }
-
-  & .next {
-    @media (--up_to_L) {
-      bottom: 10px;
-      left: calc(50% - 40px);
-    }
-    @media (--L_and_up) {
-      top: calc(50% - 30px);
-      right: 10px;
+      @media (--L_and_up) {
+        top: calc(50% - 30px);
+        right: 10px;
+      }
     }
   }
 }
@@ -241,7 +259,7 @@ figure {
     justify-content: flex-end;
 
     & .prev {
-      display: initial !important;
+      display: inline-block !important;
     }
 
     & .next {
@@ -256,7 +274,7 @@ figure {
     }
 
     & .next {
-      display: initial !important;
+      display: inline-block !important;
     }
   }
 }
@@ -266,6 +284,7 @@ figure {
   position: relative;
   overflow: hidden;
   width: 100vw;
+  min-height: 100vh;
 
   & .bg {
     @media (--up_to_M) {
