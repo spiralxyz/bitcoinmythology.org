@@ -15,7 +15,5 @@ const renderPage = (name, out = null, data = {}) => {
   writeFileSync(dst, rendered)
 }
 
-// home
 renderPage('index')
-renderPage('mining/index')
-renderPage('mining/index', 'mining/book', { mainClass: 'book' })
+renderPage('mining', 'mining/index')
