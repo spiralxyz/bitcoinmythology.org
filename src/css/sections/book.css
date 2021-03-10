@@ -129,122 +129,13 @@ figure {
   }
 }
 
-main:not(.book) {
-  & .prev,
-  & .next {
-    display: none !important;
-  }
+article,
+figure {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 
-  & article,
-  & figure {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-
-    & .wrap::after {
-      bottom: -4rem;
-    }
-  }
-}
-
-main.book {
-  & article,
-  & figure {
-    position: absolute !important;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    z-index: 0;
-    transition: opacity .5s;
-    height: 100vh;
-
-    &.page-1,
-    &.page-2 {
-      @media (--up_to_L) {
-        width: 100vw;
-      }
-      @media (--L_and_up) {
-        width: 50vw;
-      }
-    }
-
-    /* show title when there is no target */
-    &#title-1 {
-      opacity: 1;
-      z-index: 1;
-    }
-    /* if there is a target hide title */
-    &:target ~ #title-1 {
-      opacity: 0;
-      z-index: 0;
-    }
-    /* always display selected target */
-    &:target {
-      opacity: 1;
-      z-index: 2;
-    }
-
-    @media (--L_and_up) {
-      &.page-1:target {
-        left: 0;
-
-        &.page-left .next {
-          display: none;
-        }
-
-        & + .page-2 {
-          opacity: 1;
-          z-index: 1;
-          right: 0;
-
-          & .prev {
-            display: none;
-          }
-        }
-      }
-    }
-
-    & .prev,
-    & .next {
-      position: absolute;
-      z-index: 10;
-      padding: 10px;
-      width: 80px;
-      height: 60px;
-      text-align: center;
-
-      @media (--up_to_L) {
-        &.nav-l {
-          display: none;
-        }
-      }
-      @media (--L_and_up) {
-        &.nav-s {
-          display: none;
-        }
-      }
-    }
-
-    & .prev {
-      @media (--up_to_L) {
-        top: 10px;
-        left: calc(50% - 40px);
-      }
-      @media (--L_and_up) {
-        top: calc(50% - 30px);
-        left: 10px;
-      }
-    }
-
-    & .next {
-      @media (--up_to_L) {
-        bottom: 10px;
-        left: calc(50% - 40px);
-      }
-      @media (--L_and_up) {
-        top: calc(50% - 30px);
-        right: 10px;
-      }
-    }
+  & .wrap::after {
+    bottom: -4rem;
   }
 }
 
@@ -257,25 +148,9 @@ main.book {
 @media (--L_and_up) {
   .page-left {
     justify-content: flex-end;
-
-    & .prev {
-      display: inline-block !important;
-    }
-
-    & .next {
-      display: none;
-    }
   }
   .page-right {
     justify-content: flex-start;
-
-    & .prev {
-      display: none;
-    }
-
-    & .next {
-      display: inline-block !important;
-    }
   }
 }
 
