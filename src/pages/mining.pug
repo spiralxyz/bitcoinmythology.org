@@ -6,7 +6,7 @@ block vars
   - const sections = ['title', 'intro', 'scale-a-manders', 'green-giants', 'warewolves', 'ent-a-cops', 'ampires', 'fiat-fairies', 'end']
   - const bg = imgs => imgs ? `background-image:${imgs.map(i => `url(${assetPath(`/img/mining/${i}`)})`).join(',')};` : null
 
-mixin title(section, text)
+mixin title(section, text, volume)
   article(id=`${section}-1`)
     .bg(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
       img.coin1(src=assetPath("/img/mining/coin@2x.png") alt="")
@@ -16,7 +16,7 @@ mixin title(section, text)
     .content
       span.prelude The Square&nbsp;Crypto Book of Bitcoin&nbsp;Mythology
       h1.title= title
-      span.volume Volume 1
+      span.volume= volume
 
 mixin content(id, side, glyph, back, wrapBack)
   article(id=id class=`page-${side}` style=bg(back))
@@ -28,10 +28,10 @@ mixin content(id, side, glyph, back, wrapBack)
 
 mixin figure(id, alt, side)
   figure(id=`${id}-2` class=`page-${side}`)
-    img(src=assetPath(`/img/mining/${id}.png`) alt=alt loading="lazy")
+    img(src=assetPath(`/img/mining/${id}.png`) alt=alt)
 
 block main
-  +title('title', title)
+  +title('title', title, 'Volume 1')
 
   +content('intro-1', 'left', 'introduction-glyph.png', ['introduction-bg-bottom.svg'], ['introduction-bg-top.svg', 'introduction-bg-center.svg'])
     :markdown-it(html linkify typographer)
@@ -187,4 +187,4 @@ block main
 
   +figure('fiat-fairies', 'Fiat Fairies', 'left')
 
-  +title('end', 'The End')
+  +title('end', 'The End', 'Coming soon: Volume 2')
