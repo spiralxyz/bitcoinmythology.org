@@ -7,7 +7,7 @@ block vars
   - const bg = imgs => imgs ? `background-image:${imgs.map(i => `url(${assetPath(`/img/mining/${i}`)})`).join(',')};` : null
 
 mixin title(section, text, volume)
-  article(id=`${section}-1`)
+  article(id=section)
     .bg(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
       img.coin1(src=assetPath("/img/mining/coin@2x.png") alt="")
       img.coin2(src=assetPath("/img/mining/coin@2x.png") alt="")

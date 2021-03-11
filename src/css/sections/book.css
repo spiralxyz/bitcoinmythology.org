@@ -4,7 +4,7 @@ main {
 
   @media (--up_to_L) {
     grid-template-areas:
-      "title-1"
+      "title"
       "intro-1"
       "intro-2"
       "scale-a-manders-1"
@@ -19,11 +19,11 @@ main {
       "ampires-2"
       "fiat-fairies-1"
       "fiat-fairies-2"
-      "end-1";
+      "end";
   }
   @media (--L_and_up) {
     grid-template-areas:
-      "title-1 title-1"
+      "title title"
       "intro-1 intro-2"
       "scale-a-manders-1 scale-a-manders-2"
       "green-giants-2 green-giants-1"
@@ -31,14 +31,13 @@ main {
       "ent-a-cops-2 ent-a-cops-1"
       "ampires-1 ampires-2"
       "fiat-fairies-2 fiat-fairies-1"
-      "end-1 end-1";
+      "end end";
   }
 }
 
 /* text page */
 article {
   display: flex;
-  /* min-height: 100vh; */
   align-items: center;
   color: var(--color-text);
   background-color: var(--color-bg);
@@ -154,8 +153,8 @@ figure {
   }
 }
 
-#title-1,
-#end-1 {
+#title,
+#end {
   position: relative;
   overflow: hidden;
   width: 100vw;
@@ -259,18 +258,18 @@ figure {
   }
 }
 
-#title-1 {
+#title {
   --color-bg: var(--color-beige);
   --color-text: var(--color-pink);
 
-  grid-area: title-1;
+  grid-area: title;
 }
 
-#end-1 {
+#end {
   --color-bg: var(--color-evergreen);
   --color-text: var(--color-pink);
 
-  grid-area: end-1;
+  grid-area: end;
 }
 
 #intro-1 {
