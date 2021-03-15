@@ -230,7 +230,7 @@ figure {
     & .coin4 {
       position: absolute;
       width: calc(54px * var(--scale));
-      height: calc(51px * var(--scale));
+      height: calc(54px * var(--scale));
     }
 
     & .coin1 {
