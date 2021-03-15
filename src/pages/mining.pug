@@ -6,6 +6,9 @@ block vars
   - const sections = ['title', 'intro', 'scale-a-manders', 'green-giants', 'warewolves', 'ent-a-cops', 'ampires', 'fiat-fairies', 'end']
   - const bg = imgs => imgs ? `background-image:${imgs.map(i => `url(${assetPath(`/img/mining/${i}`)})`).join(',')};` : null
 
+block styles
+  link(rel="stylesheet" href=assetPath("/css/mining.css"))
+
 mixin title(section, text, volume)
   article(id=section)
     .bg(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
