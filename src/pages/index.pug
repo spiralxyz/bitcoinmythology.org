@@ -1,4 +1,193 @@
 extends /template.pug
 
+block vars
+  - const pageId = 'volume1'
+  - const title = 'Bitcoin Mining'
+  - const sections = ['title', 'intro', 'scale-a-manders', 'green-giants', 'warewolves', 'ent-a-cops', 'ampires', 'fiat-fairies', 'end']
+  - const bg = imgs => imgs ? `background-image:${imgs.map(i => `url(${assetPath(`/img/mining/${i}`)})`).join(',')};` : null
+
+block styles
+  link(rel="stylesheet" href=assetPath("/css/mining.css"))
+
+mixin title(section, text, volume)
+  article(id=section)
+    .bg(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
+      img.coin1(src=assetPath("/img/coin.svg") alt="")
+      img.coin2(src=assetPath("/img/coin.svg") alt="")
+      img.coin3(src=assetPath("/img/coin.svg") alt="")
+      img.coin4(src=assetPath("/img/coin.svg") alt="")
+    .content
+      span.prelude The Square&nbsp;Crypto Book of Bitcoin&nbsp;Mythology
+      h1.title= text
+      span.volume= volume
+
+mixin content(id, side, glyph, back, wrapBack)
+  article(id=id class=`page-${side}` style=bg(back))
+    .wrap(style=bg(wrapBack))
+      .content
+        if glyph
+          img.glyph(src=assetPath(`/img/mining/${glyph}`) alt="")
+        block
+
+mixin figure(id, alt, side)
+  figure(id=`${id}-2` class=`page-${side}`)
+    img(src=assetPath(`/img/mining/${id}.png`) alt=alt)
+
 block main
-  meta(http-equiv="Refresh" content="0;url='/mining/'")
+  +title('title', title, 'Volume 1')
+
+  +content('intro-1', 'left', 'introduction-glyph.png', ['introduction-bg-bottom.svg'], ['introduction-bg-top.svg', 'introduction-bg-center.svg'])
+    :markdown-it(html linkify typographer)
+      ## Introduction
+
+      *"Bitcoin. It's borderless. It's decentralized. And it's
+      going to end the world by releasing an endless stream
+      of smoking hot CO2 into the atmosphere."*
+
+      You've probably heard something like this a few times
+      before. But is it true? Well, no. Not really. The truth
+      is that bitcoin miners are like any other market
+      participants: to last, they have to maximize
+      efficiency. That means embracing green energy in a big
+      way.
+
+      This is the first volume in a series about bitcoin
+      myths and the mythical creatures proliferating them.
+      Since there are no more prominent or more prevalent
+      myths about bitcoin than those having to do with its
+      environmental impact, we started there.
+
+  +content('intro-2', 'right', null, ['meet-the-myths-bg.svg'])
+    :markdown-it(html linkify typographer)
+      ## Meet the myths
+
+      [1. Green Giants](#green-giants-1)
+      [2. Scale-a-manders](#scale-a-manders-1)
+      [3. Warewolves](#warewolves-1)
+      [4. Ent-a-cops](#ent-a-cops-1)
+      [5. Ampires](#ampires-1)
+      [6. Fiat Fairies](#fiat-fairies-1)
+
+  +content('green-giants-1', 'left', 'green-giants-glyph.svg', null, ['green-giants-bg.svg'])
+    h2
+      small Far-From-Jolly
+      span Green Giants
+
+    :markdown-it(html linkify typographer)
+      *"Fee-fi-fo-fum. Bitcoin miners don't utilize green energy, son."*
+
+      They're big. They're green. And they're right to be concerned
+      about where bitcoin miners get their electricity. But bitcoin
+      is actually greener than they (and most people) realize.
+
+      In order to stay competitive, bitcoin miners must seek out
+      abundant and inexpensive forms of energy. And there's no
+      energy source more abundant or inexpensive than green energy.
+      This means that any miner who wants to profit — whether they
+      care about the environment or not—has to help squash bitcoin's
+      carbon footprint.
+
+      Far out, dude.
+
+  +figure('green-giants', 'Green Giants', 'right')
+
+  +content('scale-a-manders-1', 'right', 'scale-a-manders-glyph.svg', ['scale-a-manders-bg.svg'])
+    :markdown-it(html linkify typographer)
+      ## Scale-a-manders
+
+      *"Bitcoin can't ssssssssssscale."*
+
+      Scale-a-manders are among the oldest and most pervasive
+      mythological bitcoin creatures. But despite their
+      frequent claims to the contrary, bitcoin was designed
+      to "sssscale" and scale a lot.
+
+      That's because bitcoin transaction volume is
+      independent of energy usage. This means that bitcoin
+      can accommodate 100, 1,000, or even 10,000-fold more
+      transactions without increasing its energy use.
+
+  +figure('scale-a-manders', 'Scale-a-manders', 'left')
+
+  +content('warewolves-1', 'left', 'warewolves-glyph.svg', ['warewolves-bg.svg'])
+    :markdown-it(html linkify typographer)
+      ## Warewolves
+
+      *"To recoup costs, bitcoin miners must run around the clock."*
+
+      These dogged myths claim that bitcoin miners must run 24/7
+      to recoup hardware costs. And they'd be right if this were
+      2016. What they're missing is that hardware improvements
+      naturally plateau over time, extending miner life cycles
+      from 6 months to about four years (and climbing).
+
+      This makes electricity the costliest part of mining,
+      giving miners to shut down when costs rise and making
+      bitcoin mining one of the only solutions to the renewable
+      energy supply/demand mismatch problem. Low demand? Miners
+      on. High demand? Miners off.
+
+  +figure('warewolves', 'Warewolves', 'right')
+
+  +content('ent-a-cops-1', 'right', 'ent-a-cops-glyph.svg', null, ['ent-a-cops-bg.svg'])
+    :markdown-it(html linkify typographer)
+      ## Ent-a-cops
+
+      *"Bitcoin's using too much ent-ergy!"*
+
+      These mythological beasts can't see the woods for the
+      trees—maybe that's because they are trees. Their beef
+      with bitcoin: how much energy it consumes. Though they
+      have good intentions, their concern is a little
+      misplaced: it's CO2 that's the problem, not energy
+      consumption.
+
+      If bitcoin consumed 100x more energy but emitted zero
+      CO2, would these worried sick-a-mores care? Probably
+      not. And if demand for renewable energy did spike
+      100-fold, so would investments in green technology. And
+      that benefits everyone—specially trees.
+
+  +figure('ent-a-cops', 'Ent-a-cops', 'left')
+
+  +content('ampires-1', 'left', 'ampires-glyph.png', ['ampires-bg.svg'])
+    :markdown-it(html linkify typographer)
+      ## Ampires
+
+      *"That electricity belongs elsewhere. Like Transylvania."*
+
+      These undying myths want energy consumed by bitcoin
+      allocated to other green initiatives like electric
+      vehicles. Hey, we like electric cars. But what they don't
+      know is that renewable energy consumed by bitcoin rarely
+      has other customers—not even one.
+
+      It's either unwanted due to transportation and storage
+      costs, or it just isn't in demand. If there are customers
+      for that energy, then it goes to the highest bidder. In
+      almost all cases, bitcoin miners won't be the highest
+      bidders. So put away the stake.
+
+  +figure('ampires', 'Ampires', 'right')
+
+  +content('fiat-fairies-1', 'right', 'fiat-fairies-glyph.svg', null, ['fiat-fairies-bg.svg'])
+    :markdown-it(html linkify typographer)
+      ## Fiat Fairies
+
+      *"Bitcoin consumes more energy than traditional currencies."*
+
+      The truth about government-issued currencies is that they
+      aren't backed by much more than a promise. And when they
+      are, the things that back them are militaries, police
+      forces, arcane legal systems, unaccountable banks, and
+      mints they can fire up at will.
+
+      All of these things consume vast amounts of energy—and
+      it's rarely green. When bitcoin becomes the planet's
+      preferred currency, it will come at the expense of
+      fiat-dependent systems like these. And once they're gone,
+      like real fairies, you'll probably never see them again.
+
+  +figure('fiat-fairies', 'Fiat Fairies', 'left')
+
+  +title('end', 'Coming soon', 'Volume 2: Bitcoin and Security')

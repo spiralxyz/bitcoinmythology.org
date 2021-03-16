@@ -16,4 +16,3 @@ const renderPage = (name, out = null, data = {}) => {
 }
 
 renderPage('index')
-renderPage('mining', 'mining/index')
