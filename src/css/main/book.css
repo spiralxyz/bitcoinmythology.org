@@ -41,16 +41,6 @@ article {
       padding-left: var(--space-l) !important;
       padding-right: var(--space-l) !important;
     }
-
-    /* page number, displayed via `content` */
-    &::after {
-      position: absolute;
-      bottom: -1rem;
-      left: 49%;
-      font-family: var(--font-family-head);
-
-      display: none;
-    }
   }
 
   & .content {

@@ -99,11 +99,6 @@ main {
   & .wrap {
     background-position: 49% 2%, 50% 63%;
     background-size: calc(826px * var(--bg-scale)) calc(151px * var(--bg-scale)),  calc(853px * var(--bg-scale)) calc(167px * var(--bg-scale));
-
-    &::after {
-      content: "1";
-      color: var(--color-mud);
-    }
   }
 }
 
@@ -165,11 +160,6 @@ main {
   @media (--M_to_L) {
     --bg-scale: .9;
   }
-
-  & .wrap::after {
-    content: "3";
-    color: var(--color-green);
-  }
 }
 
 #scale-a-manders-2 {
@@ -191,17 +181,6 @@ main {
 
   & .wrap {
     background-position: 85% 0;
-
-    &::after {
-      color: var(--color-blue);
-
-      @media (--up_to_L) {
-        content: "5";
-      }
-      @media (--L_and_up) {
-        content: "6";
-      }
-    }
   }
 }
 
@@ -236,11 +215,6 @@ main {
   & .glyph {
     left: -3rem;
   }
-
-  & .wrap::after {
-    content: "7";
-    color: var(--color-yellow);
-  }
 }
 
 #warewolves-2 {
@@ -263,17 +237,6 @@ main {
 
   & .wrap {
     background-position: 80% 100%;
-
-    &::after {
-      color: var(--color-yellow);
-
-      @media (--up_to_L) {
-        content: "9";
-      }
-      @media (--L_and_up) {
-        content: "10";
-      }
-    }
   }
 }
 
@@ -302,11 +265,6 @@ main {
   & .glyph {
     left: -1rem;
   }
-
-  & .wrap::after {
-    content: "11";
-    color: var(--color-darkgreen);
-  }
 }
 
 #ampires-2 {
@@ -325,17 +283,6 @@ main {
 
   & .wrap {
     background-position: 80% 100%;
-
-    &::after {
-      color: var(--color-darkgreen);
-
-      @media (--up_to_L) {
-        content: "13";
-      }
-      @media (--L_and_up) {
-        content: "14";
-      }
-    }
   }
 }
 
