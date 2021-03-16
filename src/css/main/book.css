@@ -185,13 +185,7 @@ figure {
     align-items: center;
     justify-content: center;
     height: var(--bg-h);
-
-    @media (--up_to_M) {
-      padding: var(--space-xl);
-    }
-    @media (--L_and_up) {
-      padding: var(--space-xl);
-    }
+    padding: var(--space-xl);
   }
 
   & .title {
