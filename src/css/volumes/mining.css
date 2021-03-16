@@ -180,9 +180,6 @@ main {
   --color-lead: var(--color-pink);
   --color-text: var(--color-tungsten);
   --color-bg: var(--color-beige);
-  /* @media (--L_and_up) {
-    --maxwidth-content: 39rem;
-  } */
 
   grid-area: green-giants-1;
 

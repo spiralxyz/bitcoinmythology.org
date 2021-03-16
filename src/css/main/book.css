@@ -229,17 +229,4 @@ figure {
     text-transform: uppercase;
     line-height: 1.4;
   }
-
-  & small {
-    display: block;
-    margin-bottom: .2rem;
-    color: var(--color-green);
-
-    @media (--up_to_M) {
-      font-size: .85em;
-    }
-    @media (--M_and_up) {
-      font-size: .7em;
-    }
-  }
 }

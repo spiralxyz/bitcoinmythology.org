@@ -18,12 +18,8 @@ mixin title(section, text, volume)
       img.coin4(src=assetPath("/img/coin.svg") alt="")
     .content
       span.prelude The Square&nbsp;Crypto Book of Bitcoin&nbsp;Mythology
-      h1.title= title
-      span.volume
-        if block
-          block
-        else
-          = volume
+      h1.title= text
+      span.volume= volume
 
 mixin content(id, side, glyph, back, wrapBack)
   article(id=id class=`page-${side}` style=bg(back))
@@ -194,6 +190,4 @@ block main
 
   +figure('fiat-fairies', 'Fiat Fairies', 'left')
 
-  +title('end', 'The End')
-    small Coming soon:
-    div Volume 2
+  +title('end', 'Coming soon', 'Volume 2: Bitcoin and Security')
