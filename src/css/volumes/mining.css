@@ -8,10 +8,10 @@ main {
       "title"
       "intro-1"
       "intro-2"
-      "scale-a-manders-1"
-      "scale-a-manders-2"
       "green-giants-1"
       "green-giants-2"
+      "scale-a-manders-1"
+      "scale-a-manders-2"
       "warewolves-1"
       "warewolves-2"
       "ent-a-cops-1"
@@ -26,8 +26,8 @@ main {
     grid-template-areas:
       "title title"
       "intro-1 intro-2"
-      "scale-a-manders-1 scale-a-manders-2"
-      "green-giants-2 green-giants-1"
+      "green-giants-1 green-giants-2"
+      "scale-a-manders-2 scale-a-manders-1"
       "warewolves-1 warewolves-2"
       "ent-a-cops-2 ent-a-cops-1"
       "ampires-1 ampires-2"
@@ -116,9 +116,9 @@ main {
 
   grid-area: intro-2;
   background-size: calc(790px * var(--bg-scale)) calc(774px * var(--bg-scale));
-  background-position: 55% 55%;
+  background-position: 45% 65%;
   @media (--XL_and_up) {
-    background-position: 15px 55%;
+    background-position: 15px 65%;
   }
 
   & .content {
