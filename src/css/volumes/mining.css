@@ -75,6 +75,13 @@ main {
   --color-text: var(--color-pink);
 
   grid-area: title;
+
+  @media (--up_to_L) {
+    min-height: 82.5vh;
+  }
+  @media (--L_and_up) {
+    min-height: 100vh;
+  }
 }
 
 #end {

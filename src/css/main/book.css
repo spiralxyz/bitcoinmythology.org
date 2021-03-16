@@ -150,6 +150,17 @@ figure {
 #title,
 #end {
   --maxwidth-content: 100%;
+  --bg-w: calc(1830px * var(--scale));
+  --bg-h: calc(965px * var(--scale));
+  @media (--up_to_M) {
+    --scale: .5;
+  }
+  @media (--M_to_L) {
+    --scale: 1;
+  }
+  @media (--L_and_up) {
+    --scale: 1;
+  }
 
   position: relative;
   overflow: hidden;
@@ -157,18 +168,6 @@ figure {
   min-height: 100vh;
 
   & .bg {
-    @media (--up_to_M) {
-      --scale: .5;
-    }
-    @media (--M_to_L) {
-      --scale: 1;
-    }
-    @media (--L_and_up) {
-      --scale: 1;
-    }
-
-    --bg-w: calc(1830px * var(--scale));
-    --bg-h: calc(965px * var(--scale));
     width: var(--bg-w);
     height: var(--bg-h);
     position: absolute;
@@ -185,6 +184,7 @@ figure {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: var(--bg-h);
 
     @media (--up_to_M) {
       padding: var(--space-xl);
