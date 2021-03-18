@@ -121,6 +121,11 @@ main {
     background-position: 15px 65%;
   }
 
+  & .wrap {
+    padding-left: var(--space-l);
+    padding-right: var(--space-l);
+  }
+
   & .content {
     padding-top: 3rem;
     text-align: center;
@@ -279,7 +284,7 @@ main {
 }
 
 #fiat-fairies-1 {
-  --color-lead: var(--color-orange);
+  --color-lead: var(--color-greyish);
   --color-text: var(--color-darkgreen);
   --color-bg: var(--color-teal);
 
