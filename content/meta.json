@@ -3,5 +3,5 @@
   "description": "The Square Crypto Book of Bitcoin Mythology",
   "keywords": "Bitcoin,Mythology,Mining,Energy",
   "themeColor": "#E0D1AE",
-  "cardImage": "img/card.png"
+  "cardImage": "/img/card.png"
 }
