@@ -34,7 +34,16 @@ mixin figure(id, alt, side)
     img(src=assetPath(`/img/mining/${id}.png`) alt=alt)
 
 block main
-  +title('title', title, 'Volume 1')
+  article#title
+    .bg(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
+      img.coin1(src=assetPath("/img/coin.svg") alt="")
+      img.coin2(src=assetPath("/img/coin.svg") alt="")
+      img.coin3(src=assetPath("/img/coin.svg") alt="")
+      img.coin4(src=assetPath("/img/coin.svg") alt="")
+    .content
+      span.prelude The Square&nbsp;Crypto Book of Bitcoin&nbsp;Mythology
+      h1.title= title
+      span.volume Volume 1
 
   +content('intro-1', 'left', 'introduction-glyph.png', ['introduction-bg-bottom.svg'], ['introduction-bg-top.svg', 'introduction-bg-center.svg'])
     :markdown-it(html linkify typographer)
@@ -66,7 +75,7 @@ block main
       *"Fee-fi-fo-fum. Bitcoin miners don't utilize green energy, son."*
 
       They’re big. They’re green. And they’re right to be concerned about where bitcoin miners get their electricity. But bitcoin is greener than they (and most humans) realize.
-      
+
       The highest cost associated with bitcoin mining? Energy. This makes miners some of the world’s foremost advocates for abundant and inexpensive sources like wind, hydro, and solar. Not only are these energy sources everywhere, even when they aren’t, miners can pack up and meet them wherever they are. So if you want to profitably mine bitcoin, you have to go green. Wherever that is.
 
   +figure('green-giants', 'Green Giants', 'right')
@@ -131,4 +140,14 @@ block main
 
   +figure('fiat-fairies', 'Fiat Fairies', 'left')
 
-  +title('end', 'Coming soon', 'Volume 2: Bitcoin and Security')
+  article#end
+    .bg(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
+      img.coin1(src=assetPath("/img/coin.svg") alt="")
+      img.coin2(src=assetPath("/img/coin.svg") alt="")
+      img.coin3(src=assetPath("/img/coin.svg") alt="")
+      img.coin4(src=assetPath("/img/coin.svg") alt="")
+    .content
+      span.prelude Volume 2 "Bitcoin &amp; Security" coming soon
+      h1.title The End?
+      a.button(href="https://squ.re/BCEI-whitepaper" target="_blank")
+        span Read the Green&nbsp;Mining White&nbsp;Paper
