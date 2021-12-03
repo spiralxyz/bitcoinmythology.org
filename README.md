@@ -1,8 +1,8 @@
 # Bitcoin Mythology
 
-[The Square Crypto Book of Bitcoin Mythology](https://bitcoinmythology.org).
+[The Spiral Book of Bitcoin Mythology](https://bitcoinmythology.org).
 
-![Build](https://github.com/squarecrypto/bitcoinmythology.org/workflows/build/badge.svg)
+![Build](https://github.com/spiralxyz/bitcoinmythology.org/workflows/build/badge.svg)
 
 ## Content
 
