@@ -152,6 +152,7 @@ figure {
   --maxwidth-content: 100%;
   --bg-w: calc(1830px * var(--scale));
   --bg-h: calc(965px * var(--scale));
+
   @media (--up_to_M) {
     --scale: .5;
   }
@@ -164,7 +165,6 @@ figure {
 
   position: relative;
   overflow: hidden;
-  width: 100vw;
   min-height: 100vh;
 
   & .bg {
