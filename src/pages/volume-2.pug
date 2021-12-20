@@ -1,0 +1,152 @@
+extends /template.pug
+
+block vars
+  - const pageId = 'volume1'
+  - const title = 'Bitcoin and Security'
+  - const bg = imgs => imgs ? `background-image:${imgs.map(i => `url(${assetPath(`/img/security/${i}`)})`).join(',')};` : null
+
+block styles
+  link(rel="stylesheet" href=assetPath("/css/security.css"))
+
+mixin title(section, text, volume)
+  article(id=section)
+    .bg(style=`background-image:url(${assetPath("/img/security/title-bg.svg")})`)
+      img.coin1(src=assetPath("/img/coin.svg") alt="")
+      img.coin2(src=assetPath("/img/coin.svg") alt="")
+      img.coin3(src=assetPath("/img/coin.svg") alt="")
+      img.coin4(src=assetPath("/img/coin.svg") alt="")
+    .content
+      span.prelude The Spiral Book of Bitcoin&nbsp;Mythology
+      h1.title= text
+      span.volume= volume
+
+mixin content(id, side, glyph, back, wrapBack)
+  article(id=id class=`page-${side}` style=bg(back))
+    .wrap(style=bg(wrapBack))
+      .content
+        if glyph
+          img.glyph(src=assetPath(`/img/security/${glyph}`) alt="")
+        block
+
+mixin figure(id, alt, side)
+  figure(id=`${id}-2` class=`page-${side}`)
+    img(src=assetPath(`/img/security/${id}.png`) alt=alt)
+
+block main
+  article#title
+    .bg(style=`background-image:url(${assetPath("/img/security/title-bg.svg")})`)
+      img.coin1(src=assetPath("/img/coin.svg") alt="")
+      img.coin2(src=assetPath("/img/coin.svg") alt="")
+      img.coin3(src=assetPath("/img/coin.svg") alt="")
+      img.coin4(src=assetPath("/img/coin.svg") alt="")
+    .content
+      span.prelude The Spiral Book of Bitcoin&nbsp;Mythology
+      h1.title= title
+      span.volume Volume 1
+
+  +content('intro-1', 'left', 'introduction-glyph.png', ['introduction-bg-bottom.svg'], ['introduction-bg-top.svg', 'introduction-bg-center.svg'])
+    :markdown-it(html linkify typographer)
+      ## Introduction
+
+      *"If bitcoin is so safe, why does it seem so scary?"*
+
+      If you've talked about bitcoin, you've probably heard that it's easy to steal and to lose or that it will soon be banned and go to zero. But as with all things we hear, we should ask ourselves: Is it true? Well, like with this guide's last volume, the answer is no, not really.
+
+      There's a word for this kind of misinformation, and it's FUD: Fear, Uncertainty, Doubt. And you won't find a greater source of FUD anywhere than you will when talking about bitcoin and security.
+
+  +content('intro-2', 'right', null, ['meet-the-myths-bg.svg'])
+    :markdown-it(html linkify typographer)
+      ## Meet the myths
+
+      [1. Hackersaurus Rex](#hackersaurus-rex-1)
+      [2. Hedgefundhog](#hedgefundhog-1)
+      [3. Scamera](#scamera-1)
+      [4. The Iron Legislator](#the-iron-legislator-1)
+      [5. Mount Inaccessible](#mount-inaccessible-1)
+      [6. Terrible Hiding Spot](#terrible-hiding-spot-1)
+
+  +content('hackersaurus-rex-1', 'left', 'hackersaurus-rex-glyph.svg', null, ['hackersaurus-rex-bg.svg'])
+    :markdown-it(html linkify typographer)
+      ## Hackersaurus Rex
+
+      *"Stegosaurus? No thanks. But I'll take a bite out of your bitcoin."*
+
+      Bitcoin users are both rightly and wrongly concerned about hackers. On the one hand, your bitcoin are valuable. On the other hand, most hackers are dinosaurs. So then, how do people keep getting hacked?
+
+      Human error, mainly. Because the bitcoin network has never been hacked, properly secured bitcoin are almost impossible to steal. That is unless their owners mistakenly hand them over to one of these bird brains.
+
+  +figure('hackersaurus-rex', 'Hackersaurus Rex', 'right')
+
+  +content('hedgefundhog-1', 'right', 'hedgefundhog-glyph.svg', ['hedgefundhog-bg.svg'])
+    :markdown-it(html linkify typographer)
+      ## Hedgefundhog
+
+      *"Bitcoin isn't made for crime. But I am."*
+
+      Some believe that bitcoin's anonymous and censorship-resistant nature makes it the perfect tool for committing crimes like money laundering. And it's true: people do use bitcoin for this. But if you're one of these not very smooth criminals, you should take a seat.
+
+      Not only is bitcoin not anonymous (it's pseudonymous), it leaves behind a pretty hard-to-miss trail*. So if crime is your thing, we recommend sticking to cash, which is harder to trace and already preferred by many accomplished criminals.
+
+      *For now.
+
+  +figure('hedgefundhog', 'Hedgefundhog', 'left')
+
+  +content('scamera-1', 'left', 'scamera-glyph.svg', ['scamera-bg.svg'])
+    :markdown-it(html linkify typographer)
+      ## Scamera
+
+      *"I'm feeling generous and want to give back to my community."*
+
+      Malicious actors come in many shapes and sizes: dinosaurs in hoodies, impeccably well-dressed hedgehogs, a world-famous CEO trying to double your bitcoin for a small fee. Danger is everywhere. But it's also a) not unique to bitcoin and b) pretty easy to spot.
+
+      As the saying goes, if it looks too good to be true, it probably is. So the next time you see one of these three-pronged predators offering to buy you a nation-state, keep scrolling. They can't take your bitcoin unless you give it to them.
+
+  +figure('scamera', 'Scamera', 'right')
+
+  +content('the-iron-legislator-1', 'right', 'the-iron-legislator-glyph.svg', null, ['the-iron-legislator-bg.svg'])
+    :markdown-it(html linkify typographer)
+      ## The Iron Legislator
+
+      *"These boots were made for walking… all over innovation!!!"*
+
+      Of all the things to admire about Satoshi Nakamoto, foresight is perhaps foremost. Satoshi knew that bitcoin could compete with fiat currencies and the rubber-stamping governments that issue them. However, because of the distributed nature of bitcoin nodes, miners, wallets, and general interest, bitcoin is hard to put the legislative kibosh on.
+
+      So even though bitcoin has changed a lot over the years, one thing remains the same: If you can access the Internet, you can access bitcoin.
+
+  +figure('the-iron-legislator', 'The Iron Legislator', 'left')
+
+  +content('mount-inaccessible-1', 'left', 'mount-inaccessible-glyph.png', ['mount-inaccessible-bg.svg'])
+    :markdown-it(html linkify typographer)
+      ## Mount Inaccessible
+
+      *"There are ~1091 ways to the top. Only isn't a dead end."*
+
+      Ask around, and you'll hear that millions of bitcoin are lost forever. This isn't exactly right. For one thing, they aren't "lost." We know exactly where to find them: they're stuck on bitcoin's blockchain, waiting to be rescued. Sadly, they could be waiting a very long while.
+
+      Thanks to bitcoin's proof-of-work consensus and utilization of elliptic curve cryptography, these coins are more like very, very inaccessible. But if you responsibly manage your recovery phrases and check every address before hitting send, there's no reason why your coins should join them.
+
+  +figure('mount-inaccessible', 'Mount Inaccessible', 'right')
+
+  +content('terrible-hiding-spot-1', 'right', 'terrible-hiding-spot-glyph.svg', null, ['terrible-hiding-spot-bg.svg'])
+    :markdown-it(html linkify typographer)
+      ## Terrible Hiding Spot
+
+      *"Bitcoin? Cash? Your security is only as good as your hiding spot."*
+
+      Bitcoin is like gold, they say: it's valuable, scarce, fungible, yadda yadda. But bitcoin is really more like digital cash. And like most digital things, bitcoin can be backed up, while physical cash and gold are susceptible to single points of failure.
+
+      In addition to letting users create multiple backups of recovery phrases, bitcoin can protect your money with multi-signature technology, which requires the keys of multiple secure devices to move your bitcoin, defeating the need for hiding places altogether.
+
+  +figure('terrible-hiding-spot', 'Terrible Hiding Spot', 'left')
+
+  article#end
+    .bg(style=`background-image:url(${assetPath("/img/security/title-bg.svg")})`)
+      img.coin1(src=assetPath("/img/coin.svg") alt="")
+      img.coin2(src=assetPath("/img/coin.svg") alt="")
+      img.coin3(src=assetPath("/img/coin.svg") alt="")
+      img.coin4(src=assetPath("/img/coin.svg") alt="")
+    .content
+      span.prelude Volume 3 coming soon
+      h1.title The End?
+      a.button(href="https://squ.re/BCEI-whitepaper" target="_blank")
+        span Read the Green&nbsp;security White&nbsp;Paper

@@ -7,12 +7,14 @@ const renderPage = (name, out = null, data = {}) => {
   const file = resolve(__dirname, '..', `src/pages/${name}.pug`)
   const options = Object.assign({}, config, data)
   const rendered = pug.renderFile(file, options)
-  const target = `${out || name}.html`
-  const dst = resolve(__dirname, '..', 'dist', target)
+  const dest = out === 'index' ? 'index.html' : `${out}/index.html`
+  const dst = resolve(__dirname, '..', 'dist', dest)
   const dir = dirname(dst)
 
   mkdirSync(dir, { recursive: true })
   writeFileSync(dst, rendered)
 }
 
-renderPage('index')
+renderPage('volume-2', 'index')
+renderPage('volume-1', 'volume-1-bitcoin-mining')
+renderPage('volume-2', 'volume-2-bitcoin-security')

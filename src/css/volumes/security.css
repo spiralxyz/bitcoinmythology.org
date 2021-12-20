@@ -1,0 +1,303 @@
+@import '../common.css';
+
+main {
+  display: grid;
+
+  @media (--up_to_L) {
+    grid-template-areas:
+      "title"
+      "intro-1"
+      "intro-2"
+      "green-giants-1"
+      "green-giants-2"
+      "scale-a-manders-1"
+      "scale-a-manders-2"
+      "warewolves-1"
+      "warewolves-2"
+      "ent-a-cops-1"
+      "ent-a-cops-2"
+      "ampires-1"
+      "ampires-2"
+      "fiat-fairies-1"
+      "fiat-fairies-2"
+      "end";
+  }
+  @media (--L_and_up) {
+    grid-template-areas:
+      "title title"
+      "intro-1 intro-2"
+      "green-giants-1 green-giants-2"
+      "scale-a-manders-2 scale-a-manders-1"
+      "warewolves-1 warewolves-2"
+      "ent-a-cops-2 ent-a-cops-1"
+      "ampires-1 ampires-2"
+      "fiat-fairies-2 fiat-fairies-1"
+      "end end";
+  }
+}
+
+#title,
+#end {
+  & .bg {
+    & .coin1,
+    & .coin2,
+    & .coin3,
+    & .coin4 {
+      position: absolute;
+      width: calc(54px * var(--scale));
+      height: calc(54px * var(--scale));
+    }
+
+    & .coin1 {
+      left: 51%;
+      top: 8%;
+    }
+
+    & .coin2 {
+      left: 91.3%;
+      top: 34%;
+    }
+
+    & .coin3 {
+      left: 57%;
+      top: 84%;
+    }
+
+    & .coin4 {
+      left: 10%;
+      top: 57%;
+    }
+  }
+}
+
+#title {
+  --color-bg: var(--color-beige);
+  --color-text: var(--color-pink);
+
+  grid-area: title;
+
+  @media (--up_to_L) {
+    min-height: 82.5vh;
+  }
+  @media (--L_and_up) {
+    min-height: 100vh;
+  }
+}
+
+#end {
+  --color-bg: var(--color-evergreen);
+  --color-text: var(--color-pink);
+
+  grid-area: end;
+}
+
+#intro-1 {
+  --color-lead: var(--color-green);
+  --color-text: var(--color-tungsten);
+  --color-bg: var(--color-beige);
+
+  grid-area: intro-1;
+  background-position: 67% 90%;
+
+  & .glyph {
+    width: 2.5rem;
+  }
+
+  & .wrap {
+    background-position: 49% 2%, 50% 63%;
+    background-size: calc(826px * var(--bg-scale)) calc(151px * var(--bg-scale)),  calc(853px * var(--bg-scale)) calc(167px * var(--bg-scale));
+  }
+}
+
+#intro-2 {
+  --color-lead: var(--color-mud);
+  --color-text: var(--color-mud);
+  --color-bg: var(--color-beige);
+
+  grid-area: intro-2;
+  background-size: calc(790px * var(--bg-scale)) calc(774px * var(--bg-scale));
+  background-position: 45% 65%;
+  @media (--XL_and_up) {
+    background-position: 15px 65%;
+  }
+
+  & .wrap {
+    padding-left: var(--space-l);
+    padding-right: var(--space-l);
+  }
+
+  & .content {
+    padding-top: 3rem;
+    text-align: center;
+    line-height: 1.55;
+
+    & h2,
+    & a {
+      font-size: var(--font-size-nav);
+      font-family: var(--font-family-head);
+      font-weight: var(--font-weight-medium);
+    }
+
+    & h2 {
+      margin-bottom: 3rem;
+    }
+
+    & a {
+      display: block;
+      color: var(--color-text);
+
+      &:hover,
+      &:focus {
+        color: var(--color-pink);
+      }
+    }
+  }
+}
+
+#scale-a-manders-1 {
+  --color-lead: var(--color-red);
+  --color-text: var(--color-tungsten);
+  --color-bg: var(--color-beige);
+
+  grid-area: scale-a-manders-1;
+  background-size: calc(722px * var(--bg-scale)) calc(606px * var(--bg-scale));
+  background-position: 50% 50%;
+  @media (--XL_and_up) {
+    background-position: top 50% right 50px;
+  }
+
+  @media (--up_to_M) {
+    --bg-scale: .825;
+  }
+  @media (--M_to_L) {
+    --bg-scale: .9;
+  }
+}
+
+#scale-a-manders-2 {
+  --color-text: var(--color-tungsten);
+  --color-bg: var(--color-beige);
+
+  grid-area: scale-a-manders-2;
+}
+
+#green-giants-1 {
+  --color-lead: var(--color-pink);
+  --color-text: var(--color-tungsten);
+  --color-bg: var(--color-beige);
+
+  grid-area: green-giants-1;
+
+  & .wrap {
+    background-position: 85% 0;
+  }
+}
+
+#green-giants-2 {
+  --color-text: var(--color-tungsten);
+  --color-bg: var(--color-beige);
+
+  grid-area: green-giants-2;
+}
+
+#warewolves-1 {
+  --color-lead: var(--color-pale);
+  --color-text: var(--color-greygreen);
+  --color-bg: var(--color-blue);
+
+  grid-area: warewolves-1;
+  background-size: calc(440px * var(--bg-scale)) calc(814px * var(--bg-scale));
+  @media (--L_to_XL) {
+    background-position: top 50% left 35%;
+  }
+  @media (--XL_and_up) {
+    background-position: top 50% right 180px;
+  }
+
+  @media (--up_to_M) {
+    --bg-scale: .825;
+  }
+  @media (--M_to_L) {
+    --bg-scale: .9;
+  }
+
+  & .glyph {
+    left: -3rem;
+  }
+}
+
+#warewolves-2 {
+  --color-text: var(--color-greygreen);
+  --color-bg: var(--color-blue);
+
+  grid-area: warewolves-2;
+}
+
+#ent-a-cops-1 {
+  --color-lead: var(--color-yellow);
+  --color-text: var(--color-greygreen);
+  --color-bg: var(--color-blue);
+
+  grid-area: ent-a-cops-1;
+
+  & .glyph {
+    left: -1rem;
+  }
+
+  & .wrap {
+    background-position: 80% 100%;
+  }
+}
+
+#ent-a-cops-2 {
+  --color-text: var(--color-greygreen);
+  --color-bg: var(--color-blue);
+
+  grid-area: ent-a-cops-2;
+}
+
+#ampires-1 {
+  --color-text: var(--color-darkgreen);
+  --color-bg: var(--color-teal);
+
+  grid-area: ampires-1;
+  background-size: calc(440px * var(--bg-scale)) calc(814px * var(--bg-scale));
+  background-position: 50%;
+  @media (--XL_and_up) {
+    background-position: top 50% right 180px;
+  }
+
+  @media (--up_to_M) {
+    --bg-scale: .75;
+  }
+
+  & .glyph {
+    left: -1rem;
+  }
+}
+
+#ampires-2 {
+  --color-text: var(--color-darkgreen);
+  --color-bg: var(--color-teal);
+
+  grid-area: ampires-2;
+}
+
+#fiat-fairies-1 {
+  --color-lead: var(--color-greyish);
+  --color-text: var(--color-darkgreen);
+  --color-bg: var(--color-teal);
+
+  grid-area: fiat-fairies-1;
+
+  & .wrap {
+    background-position: 80% 100%;
+  }
+}
+
+#fiat-fairies-2 {
+  --color-text: var(--color-darkgreen);
+  --color-bg: var(--color-teal);
+
+  grid-area: fiat-fairies-2;
+}
