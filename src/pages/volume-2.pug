@@ -10,7 +10,7 @@ block styles
 
 mixin title(section, text, volume)
   article(id=section)
-    .bg(style=`background-image:url(${assetPath("/img/security/title-bg.svg")})`)
+    .bg(style=`background-image:url(${assetPath("/img/title-bg.svg")})`)
       img.coin1(src=assetPath("/img/coin.svg") alt="")
       img.coin2(src=assetPath("/img/coin.svg") alt="")
       img.coin3(src=assetPath("/img/coin.svg") alt="")
@@ -34,7 +34,7 @@ mixin figure(id, alt, side)
 
 block main
   article#title
-    .bg(style=`background-image:url(${assetPath("/img/security/title-bg.svg")})`)
+    .bg(style=`background-image:url(${assetPath("/img/title-bg.svg")})`)
       img.coin1(src=assetPath("/img/coin.svg") alt="")
       img.coin2(src=assetPath("/img/coin.svg") alt="")
       img.coin3(src=assetPath("/img/coin.svg") alt="")
@@ -61,7 +61,7 @@ block main
       [1. Hackersaurus Rex](#hackersaurus-rex-1)
       [2. Hedgefundhog](#hedgefundhog-1)
       [3. Scamera](#scamera-1)
-      [4. The Iron Legislator](#the-iron-legislator-1)
+      [4. The Iron Legislator](#iron-legislator-1)
       [5. Mount Inaccessible](#mount-inaccessible-1)
       [6. Terrible Hiding Spot](#terrible-hiding-spot-1)
 
@@ -103,7 +103,7 @@ block main
 
   +figure('scamera', 'Scamera', 'right')
 
-  +content('the-iron-legislator-1', 'right', 'the-iron-legislator-glyph.svg', null, ['the-iron-legislator-bg.svg'])
+  +content('iron-legislator-1', 'right', 'iron-legislator-glyph.svg', null, ['iron-legislator-bg.svg'])
     :markdown-it(html linkify typographer)
       ## The Iron Legislator
 
@@ -113,7 +113,7 @@ block main
 
       So even though bitcoin has changed a lot over the years, one thing remains the same: If you can access the Internet, you can access bitcoin.
 
-  +figure('the-iron-legislator', 'The Iron Legislator', 'left')
+  +figure('iron-legislator', 'The Iron Legislator', 'left')
 
   +content('mount-inaccessible-1', 'left', 'mount-inaccessible-glyph.png', ['mount-inaccessible-bg.svg'])
     :markdown-it(html linkify typographer)
@@ -140,7 +140,7 @@ block main
   +figure('terrible-hiding-spot', 'Terrible Hiding Spot', 'left')
 
   article#end
-    .bg(style=`background-image:url(${assetPath("/img/security/title-bg.svg")})`)
+    .bg(style=`background-image:url(${assetPath("/img/title-bg.svg")})`)
       img.coin1(src=assetPath("/img/coin.svg") alt="")
       img.coin2(src=assetPath("/img/coin.svg") alt="")
       img.coin3(src=assetPath("/img/coin.svg") alt="")

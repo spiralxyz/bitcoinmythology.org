@@ -8,30 +8,30 @@ main {
       "title"
       "intro-1"
       "intro-2"
-      "green-giants-1"
-      "green-giants-2"
-      "scale-a-manders-1"
-      "scale-a-manders-2"
-      "warewolves-1"
-      "warewolves-2"
-      "ent-a-cops-1"
-      "ent-a-cops-2"
-      "ampires-1"
-      "ampires-2"
-      "fiat-fairies-1"
-      "fiat-fairies-2"
+      "hackersaurus-rex-1"
+      "hackersaurus-rex-2"
+      "hedgefundhog-1"
+      "hedgefundhog-2"
+      "scamera-1"
+      "scamera-2"
+      "iron-legislator-1"
+      "iron-legislator-2"
+      "mount-inaccessible-1"
+      "mount-inaccessible-2"
+      "terrible-hiding-spot-1"
+      "terrible-hiding-spot-2"
       "end";
   }
   @media (--L_and_up) {
     grid-template-areas:
       "title title"
       "intro-1 intro-2"
-      "green-giants-1 green-giants-2"
-      "scale-a-manders-2 scale-a-manders-1"
-      "warewolves-1 warewolves-2"
-      "ent-a-cops-2 ent-a-cops-1"
-      "ampires-1 ampires-2"
-      "fiat-fairies-2 fiat-fairies-1"
+      "hackersaurus-rex-1 hackersaurus-rex-2"
+      "hedgefundhog-2 hedgefundhog-1"
+      "scamera-1 scamera-2"
+      "iron-legislator-2 iron-legislator-1"
+      "mount-inaccessible-1 mount-inaccessible-2"
+      "terrible-hiding-spot-2 terrible-hiding-spot-1"
       "end end";
   }
 }
@@ -148,18 +148,18 @@ main {
 
       &:hover,
       &:focus {
-        color: var(--color-pink);
+        color: var(--color-red);
       }
     }
   }
 }
 
-#scale-a-manders-1 {
+#hedgefundhog-1 {
   --color-lead: var(--color-red);
   --color-text: var(--color-tungsten);
   --color-bg: var(--color-beige);
 
-  grid-area: scale-a-manders-1;
+  grid-area: hedgefundhog-1;
   background-size: calc(722px * var(--bg-scale)) calc(606px * var(--bg-scale));
   background-position: 50% 50%;
   @media (--XL_and_up) {
@@ -174,38 +174,38 @@ main {
   }
 }
 
-#scale-a-manders-2 {
+#hedgefundhog-2 {
   --color-text: var(--color-tungsten);
   --color-bg: var(--color-beige);
 
-  grid-area: scale-a-manders-2;
+  grid-area: hedgefundhog-2;
 }
 
-#green-giants-1 {
-  --color-lead: var(--color-pink);
+#hackersaurus-rex-1 {
+  --color-lead: var(--color-red);
   --color-text: var(--color-tungsten);
   --color-bg: var(--color-beige);
 
-  grid-area: green-giants-1;
+  grid-area: hackersaurus-rex-1;
 
   & .wrap {
     background-position: 85% 0;
   }
 }
 
-#green-giants-2 {
+#hackersaurus-rex-2 {
   --color-text: var(--color-tungsten);
   --color-bg: var(--color-beige);
 
-  grid-area: green-giants-2;
+  grid-area: hackersaurus-rex-2;
 }
 
-#warewolves-1 {
+#scamera-1 {
   --color-lead: var(--color-pale);
   --color-text: var(--color-greygreen);
   --color-bg: var(--color-blue);
 
-  grid-area: warewolves-1;
+  grid-area: scamera-1;
   background-size: calc(440px * var(--bg-scale)) calc(814px * var(--bg-scale));
   @media (--L_to_XL) {
     background-position: top 50% left 35%;
@@ -226,19 +226,19 @@ main {
   }
 }
 
-#warewolves-2 {
+#scamera-2 {
   --color-text: var(--color-greygreen);
   --color-bg: var(--color-blue);
 
-  grid-area: warewolves-2;
+  grid-area: scamera-2;
 }
 
-#ent-a-cops-1 {
+#iron-legislator-1 {
   --color-lead: var(--color-yellow);
   --color-text: var(--color-greygreen);
   --color-bg: var(--color-blue);
 
-  grid-area: ent-a-cops-1;
+  grid-area: iron-legislator-1;
 
   & .glyph {
     left: -1rem;
@@ -249,18 +249,18 @@ main {
   }
 }
 
-#ent-a-cops-2 {
+#iron-legislator-2 {
   --color-text: var(--color-greygreen);
   --color-bg: var(--color-blue);
 
-  grid-area: ent-a-cops-2;
+  grid-area: iron-legislator-2;
 }
 
-#ampires-1 {
+#mount-inaccessible-1 {
   --color-text: var(--color-darkgreen);
   --color-bg: var(--color-teal);
 
-  grid-area: ampires-1;
+  grid-area: mount-inaccessible-1;
   background-size: calc(440px * var(--bg-scale)) calc(814px * var(--bg-scale));
   background-position: 50%;
   @media (--XL_and_up) {
@@ -276,28 +276,28 @@ main {
   }
 }
 
-#ampires-2 {
+#mount-inaccessible-2 {
   --color-text: var(--color-darkgreen);
   --color-bg: var(--color-teal);
 
-  grid-area: ampires-2;
+  grid-area: mount-inaccessible-2;
 }
 
-#fiat-fairies-1 {
+#terrible-hiding-spot-1 {
   --color-lead: var(--color-greyish);
   --color-text: var(--color-darkgreen);
   --color-bg: var(--color-teal);
 
-  grid-area: fiat-fairies-1;
+  grid-area: terrible-hiding-spot-1;
 
   & .wrap {
     background-position: 80% 100%;
   }
 }
 
-#fiat-fairies-2 {
+#terrible-hiding-spot-2 {
   --color-text: var(--color-darkgreen);
   --color-bg: var(--color-teal);
 
-  grid-area: fiat-fairies-2;
+  grid-area: terrible-hiding-spot-2;
 }
