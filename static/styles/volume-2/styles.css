@@ -451,10 +451,6 @@ p {
     background-color: #ee6c51;
   }
 
-  .button:focus {
-    border: 1px solid #000;
-  }
-
   .large {
     font-size: 7.5rem;
     line-height: 8.5rem;
@@ -462,10 +458,6 @@ p {
 
   .nav-link {
     margin-left: 40px;
-  }
-
-  .nav-link:focus {
-    border: 1px solid #000;
   }
 }
 

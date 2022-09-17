@@ -327,10 +327,6 @@ main {
   .nav-link {
     margin-left: 40px;
   }
-
-  .nav-link:focus {
-    border: 1px solid #000;
-  }
 }
 
 @media screen and (max-width: 479px) {
