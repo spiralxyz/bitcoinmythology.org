@@ -33,6 +33,11 @@ mixin figure(id, alt, side)
   figure(id=`${id}-2` class=`page-${side}`)
     img(src=assetPath(`/img/mining/${id}.png`) alt=alt)
 
+mixin nav()
+  div(class='nav')
+    a(class='nav-link' href='/') Volume 1
+    a(class='nav-link' href='/volume-2.html') Volume 2
+
 block main
   article#title
     .bg(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
@@ -45,6 +50,7 @@ block main
       h1.title= title
       span.volume Volume 1
 
+  +nav()
   +content('intro-1', 'left', 'introduction-glyph.png', ['introduction-bg-bottom.svg'], ['introduction-bg-top.svg', 'introduction-bg-center.svg'])
     :markdown-it(html linkify typographer)
       ## Introduction

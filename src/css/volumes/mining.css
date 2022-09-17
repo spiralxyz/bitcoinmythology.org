@@ -36,6 +36,27 @@ main {
   }
 }
 
+.nav-link {
+  margin-left: 40px;
+  color: #272727;
+  text-decoration: none;
+  padding-bottom: 4px;
+  transition: none;
+}
+
+.nav-link:hover {
+  color: #FF7659;
+  border-bottom: 3px solid #FF7659;
+}
+
+.nav {
+  position: absolute;
+  left: auto;
+  top: 3%;
+  right: 3%;
+  bottom: auto;
+}
+
 #title,
 #end {
   & .bg {
