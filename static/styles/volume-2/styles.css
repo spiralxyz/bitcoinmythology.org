@@ -1,3 +1,26 @@
+@font-face {
+  font-family: 'Source Code Pro';
+  font-weight: 500;
+  font-style: normal;
+  src: url('/fonts/source-code-pro-v13-latin-500.woff2') format('woff2'),
+       url('/fonts/source-code-pro-v13-latin-500.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  font-weight: 500;
+  font-style: italic;
+  src: url('/fonts/source-code-pro-v13-latin-500italic.woff2') format('woff2'),
+       url('/fonts/source-code-pro-v13-latin-500italic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Young Serif';
+  font-weight: 500;
+  src: url('/fonts/young-serif-regular.woff2') format('woff2'),
+       url('/fonts/young-serif-regular.woff') format('woff');
+}
+
 .w-layout-grid {
   display: -ms-grid;
   display: grid;
@@ -35,7 +58,7 @@ p {
   -ms-flex-align: center;
   align-items: center;
   background-color: #ceb776;
-  background-image: url("../images/hedgefundhog-bg.png");
+  background-image: url("/img/security/hedgefundhog-bg.png");
   background-position: 50% 20%;
   background-size: 1360px;
   background-repeat: no-repeat;
@@ -47,7 +70,7 @@ p {
   padding-top: 10rem;
   padding-bottom: 10rem;
   background-color: #e4d7bd;
-  background-image: url("../images/hero-bg.png");
+  background-image: url("/img/security/hero-bg.png");
   background-position: 50% 50%;
   background-size: 1040px;
   background-repeat: no-repeat;
@@ -58,7 +81,7 @@ p {
   padding-top: 14rem;
   padding-bottom: 14rem;
   background-color: #13514c;
-  background-image: url("../images/shortcut-bg.png");
+  background-image: url("/img/security/shortcut-bg.png");
   background-position: 50% 20%;
   background-size: 900px;
   background-repeat: no-repeat;
@@ -70,8 +93,8 @@ p {
   padding-top: 14rem;
   padding-bottom: 14rem;
   background-color: #272727;
-  background-image: url("../images/hacker-plant.png"),
-    url("../images/hacker-bg.png");
+  background-image: url("/img/security/hacker-plant.png"),
+    url("/img/security/hacker-bg.png");
   background-position: 10% 100%, 6% 14%;
   background-size: 236px, 668px;
   background-repeat: no-repeat, no-repeat;
@@ -80,7 +103,7 @@ p {
 
 .section.scamera {
   background-color: #46433b;
-  background-image: url("../images/scamera-bg.png");
+  background-image: url("/img/security/scamera-bg.png");
   background-position: 30% 30%;
   background-size: 1280px;
   color: #f5e7cc;
@@ -89,14 +112,14 @@ p {
 .section.iron-legislator {
   position: relative;
   background-color: #3a362c;
-  background-image: url("../images/legislator-bg.png");
+  background-image: url("/img/security/legislator-bg.png");
   background-size: 1280px;
   color: #f8e1b0;
 }
 
 .section.mt {
   background-color: #413935;
-  background-image: url("../images/mt-bg.png");
+  background-image: url("/img/security/mt-bg.png");
   background-size: 1280px;
   color: #d0bcae;
 }
@@ -105,7 +128,7 @@ p {
   padding-top: 12rem;
   padding-bottom: 10rem;
   background-color: #3d555b;
-  background-image: url("../images/spot-bg.png");
+  background-image: url("/img/security/spot-bg.png");
   background-position: -10% 0%;
   background-size: cover;
   color: #e0ffe9;
@@ -117,7 +140,7 @@ p {
   padding-top: 8rem;
   padding-bottom: 8rem;
   background-color: #ece8d8;
-  background-image: url("../images/end-bg.png");
+  background-image: url("/img/security/end-bg.png");
   background-position: 60% 50%;
   background-size: 1240px;
   background-attachment: scroll;
@@ -444,7 +467,7 @@ p {
     min-height: 0px;
     padding-right: 2rem;
     padding-left: 2rem;
-    background-image: url("../images/hero-bg-mobile.png");
+    background-image: url("/img/security/hero-bg-mobile.png");
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -548,8 +571,8 @@ p {
   .section.intro {
     padding-top: 6rem;
     padding-bottom: 6rem;
-    background-image: url("../images/hero-bg-mobile.png"),
-      url("../images/hero-bg.png");
+    background-image: url("/img/security/hero-bg-mobile.png"),
+      url("/img/security/hero-bg.png");
     background-position: 50% 50%, 50% 50%;
     background-size: cover, auto;
     background-repeat: no-repeat, repeat;
@@ -852,12 +875,4 @@ p {
     -ms-grid-column-align: center;
     justify-self: center;
   }
-}
-
-@font-face {
-  font-family: "Young Serif";
-  src: url("../fonts/Youngserif-wMx6.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
 }
