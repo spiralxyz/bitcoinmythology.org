@@ -322,3 +322,39 @@ main {
 
   grid-area: fiat-fairies-2;
 }
+
+@media screen and (min-width: 1920px) {
+  .nav-link {
+    margin-left: 40px;
+  }
+
+  .nav-link:focus {
+    border: 1px solid #000;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .nav-link {
+    margin-right: 16px;
+    margin-left: 16px;
+  }
+
+  .nav {
+    left: 0%;
+    top: 2%;
+    right: 0%;
+    bottom: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
