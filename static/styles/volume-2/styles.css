@@ -21,10 +21,6 @@
     url('/fonts/young-serif-regular.woff') format('woff');
 }
 
-#Hero-main {
-  padding-top: 30vh;
-}
-
 #Hero,
 #End {
   height: 100vh;
@@ -415,6 +411,7 @@ p {
   color: #272727;
   text-decoration: none;
   padding-bottom: 4px;
+  font-size: 18px;
 }
 
 .nav-link:hover {
@@ -485,10 +482,6 @@ p {
 }
 
 @media screen and (max-width: 991px) {
-  #Hero-main {
-    padding-top: 0;
-  }
-
   #intro-flex {
     display: block;
   }
