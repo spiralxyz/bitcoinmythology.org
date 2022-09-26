@@ -3,7 +3,7 @@
   font-weight: 500;
   font-style: normal;
   src: url('/fonts/source-code-pro-v13-latin-500.woff2') format('woff2'),
-       url('/fonts/source-code-pro-v13-latin-500.woff') format('woff');
+    url('/fonts/source-code-pro-v13-latin-500.woff') format('woff');
 }
 
 @font-face {
@@ -11,14 +11,32 @@
   font-weight: 500;
   font-style: italic;
   src: url('/fonts/source-code-pro-v13-latin-500italic.woff2') format('woff2'),
-       url('/fonts/source-code-pro-v13-latin-500italic.woff') format('woff');
+    url('/fonts/source-code-pro-v13-latin-500italic.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Young Serif';
   font-weight: 500;
   src: url('/fonts/young-serif-regular.woff2') format('woff2'),
-       url('/fonts/young-serif-regular.woff') format('woff');
+    url('/fonts/young-serif-regular.woff') format('woff');
+}
+
+#Hero-main {
+  padding-top: 30vh;
+}
+
+#Hero,
+#End {
+  height: 100vh;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.sprites {
+  display: flex;
+  justify-content: center;
 }
 
 .w-layout-grid {
@@ -38,12 +56,12 @@ p {
 }
 
 .section {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 12rem;
-  padding-bottom: 12rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -57,31 +75,21 @@ p {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #ceb776;
-  background-image: url("/img/security/hedgefundhog-bg.png");
-  background-position: 50% 20%;
-  background-size: 1360px;
-  background-repeat: no-repeat;
-  color: #262e2e;
 }
 
 .section.intro {
   position: relative;
-  padding-top: 10rem;
-  padding-bottom: 10rem;
   background-color: #e4d7bd;
-  background-image: url("/img/security/hero-bg.png");
-  background-position: 50% 50%;
+  background-image: url('/img/security/hero-bg-mobile.png');
+  background-position: top;
   background-size: 1040px;
   background-repeat: no-repeat;
   background-attachment: scroll;
 }
 
 .section.jump-list {
-  padding-top: 14rem;
-  padding-bottom: 14rem;
   background-color: #13514c;
-  background-image: url("/img/security/shortcut-bg.png");
+  background-image: url('/img/security/shortcut-bg.png');
   background-position: 50% 20%;
   background-size: 900px;
   background-repeat: no-repeat;
@@ -90,59 +98,75 @@ p {
 }
 
 .section.hackersaurus {
-  padding-top: 14rem;
-  padding-bottom: 14rem;
   background-color: #272727;
-  background-image: url("/img/security/hacker-plant.png"),
-    url("/img/security/hacker-bg.png");
+  background-image: url('/img/security/hacker-plant.png'),
+    url('/img/security/hacker-bg.png');
   background-position: 10% 100%, 6% 14%;
   background-size: 236px, 668px;
-  background-repeat: no-repeat, no-repeat;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
   color: #b4bbbd;
+}
+
+.section.hedgefundhog {
+  background-color: #ceb776;
+  background-image: url('/img/security/hedgefundhog-bg.png');
+  background-position: 50% 0%;
+  background-size: 1360px;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  color: #262e2e;
 }
 
 .section.scamera {
   background-color: #46433b;
-  background-image: url("/img/security/scamera-bg.png");
+  background-image: url('/img/security/scamera-bg.png');
   background-position: 30% 30%;
   background-size: 1280px;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
   color: #f5e7cc;
 }
 
 .section.iron-legislator {
   position: relative;
   background-color: #3a362c;
-  background-image: url("/img/security/legislator-bg.png");
+  background-image: url('/img/security/legislator-bg.png');
   background-size: 1280px;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
   color: #f8e1b0;
 }
 
 .section.mt {
+  position: relative;
   background-color: #413935;
-  background-image: url("/img/security/mt-bg.png");
+  background-image: url('/img/security/mt-bg.png');
   background-size: 1280px;
+  background-position: 30% 0%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
   color: #d0bcae;
 }
 
 .section.spot {
-  padding-top: 12rem;
-  padding-bottom: 10rem;
+  position: relative;
   background-color: #3d555b;
-  background-image: url("/img/security/spot-bg.png");
+  background-image: url('/img/security/spot-bg.png');
   background-position: -10% 0%;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
   color: #e0ffe9;
 }
 
 .section.end {
   position: relative;
-  min-height: auto;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
   background-color: #ece8d8;
-  background-image: url("/img/security/end-bg.png");
+  background-image: url('/img/security/end-bg.png');
   background-position: 60% 50%;
   background-size: 1240px;
+  background-repeat: no-repeat;
   background-attachment: scroll;
 }
 
@@ -181,9 +205,15 @@ p {
   grid-template-columns: 1.5fr 1fr;
 }
 
-.grid.left-content {
-  -ms-grid-columns: 1.5fr 1fr;
-  grid-template-columns: 1.5fr 1fr;
+#intro-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#intro-text {
+  width: 550px;
 }
 
 .content.centered {
@@ -206,7 +236,7 @@ p {
   align-items: center;
 }
 
-.content.hedgefundhog {
+.content.left {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -227,7 +257,7 @@ p {
 }
 
 .body {
-  font-family: "Source Code Pro", sans-serif;
+  font-family: 'Source Code Pro', sans-serif;
   font-size: 1.188rem;
   line-height: 1.688rem;
 }
@@ -268,15 +298,15 @@ p {
 .large {
   margin-top: 3rem;
   margin-bottom: 3rem;
-  font-family: "Young Serif", sans-serif;
+  font-family: 'Young Serif', sans-serif;
   color: #272727;
-  font-size: 5.5rem;
+  font-size: 122px;
   line-height: 6.5rem;
   text-align: center;
 }
 
 .subheading {
-  font-size: 21px;
+  font-size: 25px;
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -295,7 +325,7 @@ p {
 
 .section-title {
   margin-bottom: 2rem;
-  font-family: "Young Serif", sans-serif;
+  font-family: 'Young Serif', sans-serif;
   font-size: 2rem;
   line-height: 2.5rem;
 }
@@ -363,7 +393,7 @@ p {
 }
 
 .index-link {
-  font-family: "Young Serif", sans-serif;
+  font-family: 'Young Serif', sans-serif;
   color: #ffc48e;
   font-size: 1.5rem;
   line-height: 1.75rem;
@@ -388,8 +418,8 @@ p {
 }
 
 .nav-link:hover {
-  color: #FF7659;
-  border-bottom: 3px solid #FF7659;
+  color: #ff7659;
+  border-bottom: 3px solid #ff7659;
 }
 
 .nav {
@@ -402,15 +432,7 @@ p {
 
 @media screen and (min-width: 1280px) {
   .section.intro {
-    padding-top: 15rem;
-    padding-bottom: 15rem;
     background-size: 1200px;
-  }
-
-  .section.end {
-    min-height: auto;
-    padding-top: 15rem;
-    padding-bottom: 15rem;
   }
 
   .block-content {
@@ -463,15 +485,29 @@ p {
 }
 
 @media screen and (max-width: 991px) {
+  #Hero-main {
+    padding-top: 0;
+  }
+
+  #intro-flex {
+    display: block;
+  }
+
+  #intro-text {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
   .section {
-    padding: 10rem 3rem;
+    padding: 7rem 3rem;
   }
 
   .section.intro {
     min-height: 0px;
     padding-right: 2rem;
     padding-left: 2rem;
-    background-image: url("/img/security/hero-bg-mobile.png");
+    background-image: url('/img/security/hero-bg-mobile.png');
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -479,14 +515,9 @@ p {
   }
 
   .section.jump-list {
-    padding: 10rem 3rem;
+    padding: 7rem 3rem;
     background-position: 50% 120%;
     background-size: auto;
-  }
-
-  .section.hackersaurus {
-    padding-top: 10rem;
-    padding-bottom: 20rem;
   }
 
   .section.mt {
@@ -569,31 +600,12 @@ p {
   }
 
   .section {
-    padding: 6rem 1.5rem;
-  }
-
-  .section.intro {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-    background-image: url("/img/security/hero-bg-mobile.png"),
-      url("/img/security/hero-bg.png");
-    background-position: 50% 50%, 50% 50%;
-    background-size: cover, auto;
-    background-repeat: no-repeat, repeat;
-    background-attachment: scroll, scroll;
+    padding: 7rem 1.5rem;
   }
 
   .section.jump-list {
-    padding: 6rem 1.5rem;
     background-position: 50% 3%;
     background-size: contain;
-  }
-
-  .section.hackersaurus {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
-    background-position: 10% 100%, 0% -20%;
-    background-size: 100px, 660px;
   }
 
   .section.mt {
@@ -704,17 +716,6 @@ p {
     -ms-flex-align: center;
     align-items: center;
   }
-}
-
-#w-node-dfc2563a-ff13-095e-f719-d24d121c401b-d7b166ec {
-  -ms-grid-column: span 1;
-  grid-column-start: span 1;
-  -ms-grid-column-span: 1;
-  grid-column-end: span 1;
-  -ms-grid-row: span 1;
-  grid-row-start: span 1;
-  -ms-grid-row-span: 1;
-  grid-row-end: span 1;
 }
 
 #w-node-_9de33b4c-fd3b-24f6-2180-a4b0b0e0b26f-d7b166ec {
