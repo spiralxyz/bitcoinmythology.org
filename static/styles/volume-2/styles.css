@@ -35,6 +35,14 @@
   justify-content: center;
 }
 
+.sprite-large {
+  display: none;
+}
+
+.sprite-small {
+  display: block;
+}
+
 .w-layout-grid {
   display: -ms-grid;
   display: grid;
@@ -212,7 +220,7 @@ p {
 }
 
 #intro-text {
-  width: 550px;
+  width: 40%;
 }
 
 .content.centered {
@@ -355,8 +363,6 @@ p {
 
 .section-title.f65d3d {
   color: #f65d3d;
-  font-size: 2rem;
-  line-height: 2.5rem;
 }
 
 .quote {
@@ -456,6 +462,19 @@ p {
 }
 
 @media screen and (min-width: 1920px) {
+  .sprite-large {
+    display: block;
+  }
+
+  .sprite-small {
+    display: none;
+  }
+
+  #w-node-b6c3bb04-2c18-a959-44a2-b0473805674d-d7b166ec {
+    -ms-grid-column-align: center;
+    justify-self: center;
+  }
+
   .section.intro {
     min-height: 100vh;
     background-size: 1720px;
@@ -475,12 +494,26 @@ p {
   }
 
   .large {
-    font-size: 7.5rem;
+    font-size: 135px;
     line-height: 8.5rem;
   }
 
   .nav-link {
     margin-left: 40px;
+  }
+
+  .section-title {
+    font-size: 61px;
+  }
+
+  .section-title.myths {
+    font-size: 49px;
+    line-height: 49px;
+  }
+
+  .myths-list {
+    font-size: 49px;
+    line-height: 75px;
   }
 }
 
@@ -491,7 +524,7 @@ p {
 
   #intro-text {
     width: 100%;
-    text-align: center;
+
     margin-bottom: 5rem;
   }
 
@@ -511,7 +544,6 @@ p {
   }
 
   .section.jump-list {
-    padding: 7rem 3rem;
     background-position: 50% 120%;
     background-size: auto;
   }
@@ -575,7 +607,6 @@ p {
 
   .content {
     width: 100%;
-    text-align: center;
   }
 
   .large {
@@ -680,6 +711,10 @@ p {
   .index-link {
     font-size: 1.5rem;
     line-height: 1.75rem;
+  }
+
+  .section.iron-legislator {
+    background-size: cover;
   }
 }
 
@@ -864,11 +899,4 @@ p {
   grid-row-start: span 1;
   -ms-grid-row-span: 1;
   grid-row-end: span 1;
-}
-
-@media screen and (min-width: 1920px) {
-  #w-node-b6c3bb04-2c18-a959-44a2-b0473805674d-d7b166ec {
-    -ms-grid-column-align: center;
-    justify-self: center;
-  }
 }
