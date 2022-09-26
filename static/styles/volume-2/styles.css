@@ -115,7 +115,7 @@ p {
 }
 
 .section.scamera {
-  background-color: #46433b;
+  background-color: #5b574d;
   background-image: url('/img/security/scamera-bg.png');
   background-position: 30% 30%;
   background-size: 1280px;
@@ -126,7 +126,7 @@ p {
 
 .section.iron-legislator {
   position: relative;
-  background-color: #3a362c;
+  background-color: #312d25;
   background-image: url('/img/security/legislator-bg.png');
   background-size: 1280px;
   background-repeat: no-repeat;
@@ -136,13 +136,16 @@ p {
 
 .section.mt {
   position: relative;
-  background-color: #413935;
+  background-color: #9d9680;
   background-image: url('/img/security/mt-bg.png');
   background-size: 1280px;
   background-position: 30% 0%;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  color: #d0bcae;
+}
+
+.mt-body {
+  color: #0b0b0a;
 }
 
 .section.spot {
@@ -326,8 +329,8 @@ p {
   line-height: 2.5rem;
 }
 
-.section-title.e7bb64 {
-  color: #e7bb64;
+.section-title.292320 {
+  color: #292320;
 }
 
 .section-title.e58918 {
@@ -368,8 +371,8 @@ p {
   color: #e8ffb6;
 }
 
-.quote.e7bb64 {
-  color: #e7bb64;
+.quote.292320 {
+  color: #292320;
 }
 
 .quote.e58918 {
@@ -578,15 +581,30 @@ p {
   .large {
     margin-top: 1rem;
     margin-bottom: 1rem;
+    font-size: 3rem;
+    line-height: 3rem;
+    text-align: center;
+  }
+
+  .subheading {
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+  }
+
+  .subheading.e24f30 {
+    line-height: 1.45rem;
+    text-align: center;
+  }
+
+  .subheading._13514c {
+    line-height: 1.4rem;
     text-align: center;
   }
 
   .section-title.index {
     text-align: center;
   }
-}
 
-@media screen and (max-width: 479px) {
   p {
     font-size: 1.1rem;
     line-height: 1.45rem;
@@ -654,28 +672,6 @@ p {
     text-align: center;
   }
 
-  .large {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-size: 3rem;
-    line-height: 3rem;
-  }
-
-  .subheading {
-    font-size: 1.1rem;
-    line-height: 1.1rem;
-  }
-
-  .subheading.e24f30 {
-    line-height: 1.45rem;
-    text-align: center;
-  }
-
-  .subheading._13514c {
-    line-height: 1.4rem;
-    text-align: center;
-  }
-
   .section-title {
     font-size: 2rem;
     line-height: 2.5rem;
@@ -685,7 +681,9 @@ p {
     font-size: 1.5rem;
     line-height: 1.75rem;
   }
+}
 
+@media screen and (max-width: 479px) {
   .nav-link {
     margin-right: 16px;
     margin-left: 16px;
