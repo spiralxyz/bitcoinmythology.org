@@ -1,3 +1,7 @@
+main {
+  display: grid;
+}
+
 /* text page */
 article {
   --maxwidth-content: 33rem;
@@ -23,6 +27,29 @@ article {
   background-repeat: no-repeat;
   padding-top: 5rem;
   padding-bottom: 5rem;
+
+  & nav {
+    position: absolute;
+    left: auto;
+    top: var(--space-xl);
+    right: var(--space-xl);
+    display: flex;
+    gap: var(--space-l);
+    font-size: var(--font-size-base);
+
+    & span {
+      color: var(--color-nav);
+    }
+
+    & a {
+      padding-bottom: var(--space-xs);
+      text-decoration: none;
+
+      &:hover {
+        border-bottom: var(--space-xs) solid var(--color-text);
+      }
+    }
+  }
 
   /* text container */
   & .wrap {
@@ -209,7 +236,7 @@ figure {
   }
 
   & .prelude {
-    color: var(--color-green);
+    color: var(--color-lead);
     text-align: center;
 
     @media (--up_to_M) {

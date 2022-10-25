@@ -3,22 +3,11 @@ extends /template.pug
 block vars
   - const pageId = 'volume1'
   - const title = 'Bitcoin Mining'
+  - const cardImage = assetPath('/img/mining/card.png')
   - const bg = imgs => imgs ? `background-image:${imgs.map(i => `url(${assetPath(`/img/mining/${i}`)})`).join(',')};` : null
 
 block styles
   link(rel="stylesheet" href=assetPath("/css/mining.css"))
-
-mixin title(section, text, volume)
-  article(id=section)
-    .bg(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
-      img.coin1(src=assetPath("/img/coin.svg") alt="")
-      img.coin2(src=assetPath("/img/coin.svg") alt="")
-      img.coin3(src=assetPath("/img/coin.svg") alt="")
-      img.coin4(src=assetPath("/img/coin.svg") alt="")
-    .content
-      span.prelude The Spiral Book of Bitcoin&nbsp;Mythology
-      h1.title= text
-      span.volume= volume
 
 mixin content(id, side, glyph, back, wrapBack)
   article(id=id class=`page-${side}` style=bg(back))
@@ -34,6 +23,7 @@ mixin figure(id, alt, side)
 
 block main
   article#title
+    +nav(1)
     .bg(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
       img.coin1(src=assetPath("/img/coin.svg") alt="")
       img.coin2(src=assetPath("/img/coin.svg") alt="")
@@ -146,7 +136,7 @@ block main
       img.coin3(src=assetPath("/img/coin.svg") alt="")
       img.coin4(src=assetPath("/img/coin.svg") alt="")
     .content
-      span.prelude Volume 2 "Bitcoin &amp; Security" coming soon
+      span.prelude Volume 2 "Bitcoin Security" Out Now
       h1.title The End?
-      a.button(href="https://squ.re/BCEI-whitepaper" target="_blank")
-        span Read the Green&nbsp;Mining White&nbsp;Paper
+      a.button(href="/volume-2-bitcoin-security/")
+        span Read Volume 2: Bitcoin Security

@@ -1,7 +1,23 @@
 @import '../common.css';
 
 main {
-  display: grid;
+  --color-white: #fff;
+  --color-pale: #ECE8D8;
+  --color-beige: #E4D7BD;
+  --color-pink: #F54073;
+  --color-green: #13514C;
+  --color-cream: #FFC48E;
+  --color-yellow: #EDB64C;
+  --color-orange: #FF7659;
+  --color-blue: #386475;
+  --color-greygreen: #CCD0A5;
+  --color-greyish: #BFCDBA;
+  --color-teal: #749386;
+  --color-tungsten: #311F28;
+  --color-evergreen: #0E2B28;
+
+  --color-body-text: var(--color-tungsten);
+  --color-body-bg: var(--color-beige);
 
   @media (--up_to_L) {
     grid-template-areas:
@@ -71,8 +87,10 @@ main {
 }
 
 #title {
-  --color-bg: var(--color-beige);
-  --color-text: var(--color-pink);
+  --color-bg: #E4D7BD;
+  --color-text: #272727;
+  --color-nav: var(--color-pink);
+  --color-lead: var(--color-pink);
 
   grid-area: title;
 
@@ -85,16 +103,18 @@ main {
 }
 
 #end {
-  --color-bg: var(--color-evergreen);
-  --color-text: var(--color-pink);
+  --color-bg: #ECE8D8;
+  --color-text: #272727;
+  --color-nav: var(--color-beige);
+  --color-lead: var(--color-green);
 
   grid-area: end;
 }
 
 #intro-1 {
-  --color-lead: var(--color-green);
-  --color-text: var(--color-tungsten);
-  --color-bg: var(--color-beige);
+  --color-lead: var(--color-yellow);
+  --color-text: var(--color-pale);
+  --color-bg: var(--color-green);
 
   grid-area: intro-1;
   background-position: 67% 90%;
@@ -111,8 +131,8 @@ main {
 
 #intro-2 {
   --color-lead: var(--color-mud);
-  --color-text: var(--color-mud);
-  --color-bg: var(--color-beige);
+  --color-text: var(--color-cream);
+  --color-bg: var(--color-green);
 
   grid-area: intro-2;
   background-size: calc(790px * var(--bg-scale)) calc(774px * var(--bg-scale));
@@ -148,16 +168,35 @@ main {
 
       &:hover,
       &:focus {
-        color: var(--color-red);
+        color: var(--color-orange);
       }
     }
   }
 }
 
+#hackersaurus-rex-1 {
+  --color-lead: #F75D3D;
+  --color-text: #B4BBBD;
+  --color-bg: #272727;
+
+  grid-area: hackersaurus-rex-1;
+
+  & .wrap {
+    background-position: 85% 0;
+  }
+}
+
+#hackersaurus-rex-2 {
+  --color-text: #B4BBBD;
+  --color-bg: #272727;
+
+  grid-area: hackersaurus-rex-2;
+}
+
 #hedgefundhog-1 {
-  --color-lead: var(--color-red);
-  --color-text: var(--color-tungsten);
-  --color-bg: var(--color-beige);
+  --color-lead: #13514C;
+  --color-text: #262E2E;
+  --color-bg: #CEB776;
 
   grid-area: hedgefundhog-1;
   background-size: calc(722px * var(--bg-scale)) calc(606px * var(--bg-scale));
@@ -175,35 +214,16 @@ main {
 }
 
 #hedgefundhog-2 {
-  --color-text: var(--color-tungsten);
-  --color-bg: var(--color-beige);
+  --color-text: #262E2E;
+  --color-bg: #CEB776;
 
   grid-area: hedgefundhog-2;
 }
 
-#hackersaurus-rex-1 {
-  --color-lead: var(--color-red);
-  --color-text: var(--color-tungsten);
-  --color-bg: var(--color-beige);
-
-  grid-area: hackersaurus-rex-1;
-
-  & .wrap {
-    background-position: 85% 0;
-  }
-}
-
-#hackersaurus-rex-2 {
-  --color-text: var(--color-tungsten);
-  --color-bg: var(--color-beige);
-
-  grid-area: hackersaurus-rex-2;
-}
-
 #scamera-1 {
-  --color-lead: var(--color-pale);
-  --color-text: var(--color-greygreen);
-  --color-bg: var(--color-blue);
+  --color-lead: #FFDD8E;
+  --color-text: #F5E7CC;
+  --color-bg: #5B574D;
 
   grid-area: scamera-1;
   background-size: calc(440px * var(--bg-scale)) calc(814px * var(--bg-scale));
@@ -227,16 +247,16 @@ main {
 }
 
 #scamera-2 {
-  --color-text: var(--color-greygreen);
-  --color-bg: var(--color-blue);
+  --color-text: #F5E7CC;
+  --color-bg: #5B574D;
 
   grid-area: scamera-2;
 }
 
 #iron-legislator-1 {
-  --color-lead: var(--color-yellow);
-  --color-text: var(--color-greygreen);
-  --color-bg: var(--color-blue);
+  --color-lead: #E58918;
+  --color-text: #F8E1B0;
+  --color-bg: #312D25;
 
   grid-area: iron-legislator-1;
 
@@ -250,15 +270,16 @@ main {
 }
 
 #iron-legislator-2 {
-  --color-text: var(--color-greygreen);
-  --color-bg: var(--color-blue);
+  --color-text: #F8E1B0;
+  --color-bg: #312D25;
 
   grid-area: iron-legislator-2;
 }
 
 #mount-inaccessible-1 {
-  --color-text: var(--color-darkgreen);
-  --color-bg: var(--color-teal);
+  --color-lead: #292320;
+  --color-text: #0B0B0A;
+  --color-bg: #9D9680;
 
   grid-area: mount-inaccessible-1;
   background-size: calc(440px * var(--bg-scale)) calc(814px * var(--bg-scale));
@@ -277,16 +298,16 @@ main {
 }
 
 #mount-inaccessible-2 {
-  --color-text: var(--color-darkgreen);
-  --color-bg: var(--color-teal);
+  --color-text: #0B0B0A;
+  --color-bg: #9D9680;
 
   grid-area: mount-inaccessible-2;
 }
 
 #terrible-hiding-spot-1 {
-  --color-lead: var(--color-greyish);
-  --color-text: var(--color-darkgreen);
-  --color-bg: var(--color-teal);
+  --color-lead: #E8FFB6;
+  --color-text: #E0FFE9;
+  --color-bg: #3D555B;
 
   grid-area: terrible-hiding-spot-1;
 
@@ -296,8 +317,8 @@ main {
 }
 
 #terrible-hiding-spot-2 {
-  --color-text: var(--color-darkgreen);
-  --color-bg: var(--color-teal);
+  --color-text: #E0FFE9;
+  --color-bg: #3D555B;
 
   grid-area: terrible-hiding-spot-2;
 }

@@ -1,24 +1,13 @@
 extends /template.pug
 
 block vars
-  - const pageId = 'volume1'
-  - const title = 'Bitcoin and Security'
+  - const pageId = 'volume2'
+  - const title = 'Bitcoin Security'
+  - const cardImage = assetPath('/img/security/card.png')
   - const bg = imgs => imgs ? `background-image:${imgs.map(i => `url(${assetPath(`/img/security/${i}`)})`).join(',')};` : null
 
 block styles
   link(rel="stylesheet" href=assetPath("/css/security.css"))
-
-mixin title(section, text, volume)
-  article(id=section)
-    .bg(style=`background-image:url(${assetPath("/img/title-bg.svg")})`)
-      img.coin1(src=assetPath("/img/coin.svg") alt="")
-      img.coin2(src=assetPath("/img/coin.svg") alt="")
-      img.coin3(src=assetPath("/img/coin.svg") alt="")
-      img.coin4(src=assetPath("/img/coin.svg") alt="")
-    .content
-      span.prelude The Spiral Book of Bitcoin&nbsp;Mythology
-      h1.title= text
-      span.volume= volume
 
 mixin content(id, side, glyph, back, wrapBack)
   article(id=id class=`page-${side}` style=bg(back))
@@ -34,6 +23,7 @@ mixin figure(id, alt, side)
 
 block main
   article#title
+    +nav(2)
     .bg(style=`background-image:url(${assetPath("/img/title-bg.svg")})`)
       img.coin1(src=assetPath("/img/coin.svg") alt="")
       img.coin2(src=assetPath("/img/coin.svg") alt="")
@@ -42,7 +32,7 @@ block main
     .content
       span.prelude The Spiral Book of Bitcoin&nbsp;Mythology
       h1.title= title
-      span.volume Volume 1
+      span.volume Volume 2
 
   +content('intro-1', 'left', 'introduction-glyph.png', ['introduction-bg-bottom.svg'], ['introduction-bg-top.svg', 'introduction-bg-center.svg'])
     :markdown-it(html linkify typographer)
@@ -148,5 +138,5 @@ block main
     .content
       span.prelude Volume 3 coming soon
       h1.title The End?
-      a.button(href="https://squ.re/BCEI-whitepaper" target="_blank")
-        span Read the Green&nbsp;security White&nbsp;Paper
+      a.button(href="/volume-1-bitcoin-mining/" target="_blank")
+        span Read Volume 1: Bitcoin Mining

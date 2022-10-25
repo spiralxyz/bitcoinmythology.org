@@ -15,6 +15,6 @@ const renderPage = (name, out = null, data = {}) => {
   writeFileSync(dst, rendered)
 }
 
-renderPage('volume-2', 'index')
+renderPage('volume-1', 'index')
 renderPage('volume-1', 'volume-1-bitcoin-mining')
 renderPage('volume-2', 'volume-2-bitcoin-security')
