@@ -24,17 +24,13 @@ mixin figure(id, alt, side)
 block main
   article#title
     +nav(2)
-    .bg(style=`background-image:url(${assetPath("/img/title-bg.svg")})`)
-      img.coin1(src=assetPath("/img/coin.svg") alt="")
-      img.coin2(src=assetPath("/img/coin.svg") alt="")
-      img.coin3(src=assetPath("/img/coin.svg") alt="")
-      img.coin4(src=assetPath("/img/coin.svg") alt="")
+    .bg(style=`background-image:url(${assetPath("/img/security/title-bg.png")})`)
     .content
       span.prelude The Spiral Book of Bitcoin&nbsp;Mythology
       h1.title= title
       span.volume Volume 2
 
-  +content('intro-1', 'left', 'introduction-glyph.png', ['introduction-bg-bottom.svg'], ['introduction-bg-top.svg', 'introduction-bg-center.svg'])
+  +content('intro-1', 'left', 'introduction-glyph.png', ['white-cloud.png'], ['white-cloud.png', 'white-cloud.png', 'white-star.png'])
     :markdown-it(html linkify typographer)
       ## Introduction
 
@@ -55,7 +51,7 @@ block main
       [5. Mount Inaccessible](#mount-inaccessible-1)
       [6. Terrible Hiding Spot](#terrible-hiding-spot-1)
 
-  +content('hackersaurus-rex-1', 'left', 'hackersaurus-rex-glyph.svg', null, ['hackersaurus-rex-bg.svg'])
+  +content('hackersaurus-rex-1', 'left', 'hackersaurus-rex-glyph.svg', ['hackersaurus-rex-bg-top.svg', 'hackersaurus-rex-bg-bottom.svg'])
     :markdown-it(html linkify typographer)
       ## Hackersaurus Rex
 
@@ -67,7 +63,7 @@ block main
 
   +figure('hackersaurus-rex', 'Hackersaurus Rex', 'right')
 
-  +content('hedgefundhog-1', 'right', 'hedgefundhog-glyph.svg', ['hedgefundhog-bg.svg'])
+  +content('hedgefundhog-1', 'right', 'hedgefundhog-glyph.png', ['snowflakes.png', 'white-star.png', 'white-star.png'], ['white-cloud.png', 'white-cloud.png', 'white-star.png'])
     :markdown-it(html linkify typographer)
       ## Hedgefundhog
 
@@ -81,7 +77,7 @@ block main
 
   +figure('hedgefundhog', 'Hedgefundhog', 'left')
 
-  +content('scamera-1', 'left', 'scamera-glyph.svg', ['scamera-bg.svg'])
+  +content('scamera-1', 'left', 'scamera-glyph.png', ['white-cloud.png', 'red-star.png'], ['red-star.png', 'red-star.png'])
     :markdown-it(html linkify typographer)
       ## Scamera
 
@@ -93,7 +89,7 @@ block main
 
   +figure('scamera', 'Scamera', 'right')
 
-  +content('iron-legislator-1', 'right', 'iron-legislator-glyph.svg', null, ['iron-legislator-bg.svg'])
+  +content('iron-legislator-1', 'right', 'iron-legislator-glyph.png', ['metal.png', 'white-cloud.png', 'white-cloud.png'], ['papers.png', 'white-star.png'])
     :markdown-it(html linkify typographer)
       ## The Iron Legislator
 
@@ -105,7 +101,7 @@ block main
 
   +figure('iron-legislator', 'The Iron Legislator', 'left')
 
-  +content('mount-inaccessible-1', 'left', 'mount-inaccessible-glyph.png', ['mount-inaccessible-bg.svg'])
+  +content('mount-inaccessible-1', 'left', 'mount-inaccessible-glyph.png', ['black-star.png', 'black-star.png', 'black-cloud.png'])
     :markdown-it(html linkify typographer)
       ## Mount Inaccessible
 
@@ -117,7 +113,7 @@ block main
 
   +figure('mount-inaccessible', 'Mount Inaccessible', 'right')
 
-  +content('terrible-hiding-spot-1', 'right', 'terrible-hiding-spot-glyph.svg', null, ['terrible-hiding-spot-bg.svg'])
+  +content('terrible-hiding-spot-1', 'right', 'terrible-hiding-spot-glyph.svg', ['terrible-hiding-spot-bg-top.svg', 'curl.png', 'curl.png'])
     :markdown-it(html linkify typographer)
       ## Terrible Hiding Spot
 
@@ -129,12 +125,8 @@ block main
 
   +figure('terrible-hiding-spot', 'Terrible Hiding Spot', 'left')
 
-  article#end
-    .bg(style=`background-image:url(${assetPath("/img/title-bg.svg")})`)
-      img.coin1(src=assetPath("/img/coin.svg") alt="")
-      img.coin2(src=assetPath("/img/coin.svg") alt="")
-      img.coin3(src=assetPath("/img/coin.svg") alt="")
-      img.coin4(src=assetPath("/img/coin.svg") alt="")
+  article#end(style=`background-image:url(${assetPath("/img/security/plants-end.png")}),url(${assetPath("/img/security/hackersaurus-rex-bg-bottom.svg")})`)
+    .bg(style=`background-image:url(${assetPath("/img/security/end-bg.svg")})`)
     .content
       span.prelude Volume 3 coming soon
       h1.title The End?

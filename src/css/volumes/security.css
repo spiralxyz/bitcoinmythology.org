@@ -52,37 +52,44 @@ main {
   }
 }
 
+article {
+  & em {
+    display: block;
+    font-style: normal;
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+
 #title,
 #end {
+  --bg-w: calc(1213px * var(--scale));
+  --bg-h: calc(793px * var(--scale));
+
+  @media (--up_to_M) {
+    --scale: .5;
+  }
+  @media (--M_to_L) {
+    --scale: 1;
+  }
+  @media (--L_and_up) {
+    --scale: 1.25;
+  }
+
   & .bg {
-    & .coin1,
-    & .coin2,
-    & .coin3,
-    & .coin4 {
-      position: absolute;
-      width: calc(54px * var(--scale));
-      height: calc(54px * var(--scale));
-    }
+    width: var(--bg-w);
+    height: var(--bg-h);
+    position: absolute;
+    z-index: 0;
+    top: calc(50% - var(--bg-h) / 2);
+    left: calc(48% - var(--bg-w) / 2);
+    background-size: var(--bg-w) var(--bg-h);
+    background-repeat: no-repeat;
+  }
 
-    & .coin1 {
-      left: 51%;
-      top: 8%;
-    }
-
-    & .coin2 {
-      left: 91.3%;
-      top: 34%;
-    }
-
-    & .coin3 {
-      left: 57%;
-      top: 84%;
-    }
-
-    & .coin4 {
-      left: 10%;
-      top: 57%;
-    }
+  & .content {
+    height: var(--bg-h);
   }
 }
 
@@ -109,6 +116,7 @@ main {
   --color-lead: var(--color-green);
 
   grid-area: end;
+  background-position: 20% 100%, 96% 101%;
 }
 
 #intro-1 {
@@ -117,28 +125,39 @@ main {
   --color-bg: var(--color-green);
 
   grid-area: intro-1;
-  background-position: 67% 90%;
 
-  & .glyph {
-    width: 2.5rem;
+  @media (--up_to_M) {
+    background-position: 5% 10%;
+    background-size: 111px 29px;
+  }
+  @media (--M_and_up) {
+    background-position: 5% 10%;
+    background-size: 223px 59px;
   }
 
   & .wrap {
-    background-position: 49% 2%, 50% 63%;
-    background-size: calc(826px * var(--bg-scale)) calc(151px * var(--bg-scale)),  calc(853px * var(--bg-scale)) calc(167px * var(--bg-scale));
+    background-position: 42% -1%, 87% 8%, 5% 95%;
+    background-size: 111px 29px, 111px 29px, 38px 39px;
   }
 }
 
 #intro-2 {
-  --color-lead: var(--color-mud);
   --color-text: var(--color-cream);
   --color-bg: var(--color-green);
 
   grid-area: intro-2;
-  background-size: calc(790px * var(--bg-scale)) calc(774px * var(--bg-scale));
+  background-size: calc(453px * var(--bg-scale)) calc(676px * var(--bg-scale));
   background-position: 45% 65%;
-  @media (--XL_and_up) {
-    background-position: 15px 65%;
+
+  @media (--up_to_M) {
+    --bg-scale: .825;
+  }
+  @media (--M_to_L) {
+    --bg-scale: 1;
+  }
+  @media (--L_and_up) {
+    --bg-scale: 1.125;
+    background-position: 75px 50%;
   }
 
   & .wrap {
@@ -181,8 +200,15 @@ main {
 
   grid-area: hackersaurus-rex-1;
 
-  & .wrap {
-    background-position: 85% 0;
+
+  @media (--up_to_L) {
+    background-position: 50% 5%, -100%;
+    background-size: 300px, 0;
+  }
+
+  @media (--L_and_up) {
+    background-position: 50% 10%, 50% 100%;
+    background-size: auto, 275px;
   }
 }
 
@@ -197,19 +223,20 @@ main {
   --color-lead: #13514C;
   --color-text: #262E2E;
   --color-bg: #CEB776;
-
   grid-area: hedgefundhog-1;
-  background-size: calc(722px * var(--bg-scale)) calc(606px * var(--bg-scale));
-  background-position: 50% 50%;
-  @media (--XL_and_up) {
-    background-position: top 50% right 50px;
-  }
+
+  background-position: 76% 5%, 69% 80%, 5% 89%;
 
   @media (--up_to_M) {
     --bg-scale: .825;
   }
   @media (--M_to_L) {
     --bg-scale: .9;
+  }
+
+  & .wrap {
+    background-position: 81% 5%, 24% 2%, 8% 16%;
+    background-size: auto, 150px, auto;
   }
 }
 
@@ -226,23 +253,10 @@ main {
   --color-bg: #5B574D;
 
   grid-area: scamera-1;
-  background-size: calc(440px * var(--bg-scale)) calc(814px * var(--bg-scale));
-  @media (--L_to_XL) {
-    background-position: top 50% left 35%;
-  }
-  @media (--XL_and_up) {
-    background-position: top 50% right 180px;
-  }
+  background-position: 30% 5%, 65% 2%;
 
-  @media (--up_to_M) {
-    --bg-scale: .825;
-  }
-  @media (--M_to_L) {
-    --bg-scale: .9;
-  }
-
-  & .glyph {
-    left: -3rem;
+  & .wrap {
+    background-position: 97% 100%, 2% 96%;
   }
 }
 
@@ -259,13 +273,13 @@ main {
   --color-bg: #312D25;
 
   grid-area: iron-legislator-1;
+  background-position: 100% 0, 1% 5%, 60% 10%;
+  background-size: auto, auto, 100px;
 
-  & .glyph {
-    left: -1rem;
-  }
 
   & .wrap {
-    background-position: 80% 100%;
+    background-position: 102% 102%, 100% 10%;
+    background-size: 150px, auto;
   }
 }
 
@@ -282,11 +296,8 @@ main {
   --color-bg: #9D9680;
 
   grid-area: mount-inaccessible-1;
-  background-size: calc(440px * var(--bg-scale)) calc(814px * var(--bg-scale));
-  background-position: 50%;
-  @media (--XL_and_up) {
-    background-position: top 50% right 180px;
-  }
+  background-position: 15% 5%, 50% 7%, 100% 5%;
+  background-size: auto, 40px, auto;
 
   @media (--up_to_M) {
     --bg-scale: .75;
@@ -311,9 +322,8 @@ main {
 
   grid-area: terrible-hiding-spot-1;
 
-  & .wrap {
-    background-position: 80% 100%;
-  }
+  background-position: 15% 2%, 68% 88%, -1% 93%;
+  background-size: auto, auto, 5%;
 }
 
 #terrible-hiding-spot-2 {

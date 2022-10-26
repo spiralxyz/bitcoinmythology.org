@@ -56,6 +56,34 @@ main {
 
 #title,
 #end {
+  --bg-w: calc(1830px * var(--scale));
+  --bg-h: calc(965px * var(--scale));
+
+  @media (--up_to_M) {
+    --scale: .5;
+  }
+  @media (--M_to_L) {
+    --scale: 1;
+  }
+  @media (--L_and_up) {
+    --scale: 1;
+  }
+
+  & .bg {
+    width: var(--bg-w);
+    height: var(--bg-h);
+    position: absolute;
+    z-index: 0;
+    top: calc(50% - var(--bg-h) / 2);
+    left: calc(48% - var(--bg-w) / 2);
+    background-size: var(--bg-w) var(--bg-h);
+    background-repeat: no-repeat;
+  }
+
+  & .content {
+    height: var(--bg-h);
+  }
+
   & .bg {
     & .coin1,
     & .coin2,

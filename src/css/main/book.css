@@ -177,43 +177,10 @@ figure {
 #title,
 #end {
   --maxwidth-content: 100%;
-  --bg-w: calc(1830px * var(--scale));
-  --bg-h: calc(965px * var(--scale));
-
-  @media (--up_to_M) {
-    --scale: .5;
-  }
-  @media (--M_to_L) {
-    --scale: 1;
-  }
-  @media (--L_and_up) {
-    --scale: 1;
-  }
 
   position: relative;
   overflow: hidden;
   min-height: 100vh;
-
-  & .bg {
-    width: var(--bg-w);
-    height: var(--bg-h);
-    position: absolute;
-    z-index: 0;
-    top: calc(50% - var(--bg-h) / 2);
-    left: calc(48% - var(--bg-w) / 2);
-    background-size: var(--bg-w) var(--bg-h);
-    background-repeat: no-repeat;
-  }
-
-  & .content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: var(--bg-h);
-    padding: var(--space-xl);
-  }
 
   & .title {
     font-size: var(--font-size-title);
@@ -227,6 +194,15 @@ figure {
     @media (--L_and_up) {
       margin: var(--space-xxl) 0;
     }
+  }
+
+  & .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xl);
   }
 
   & .title,
