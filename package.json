@@ -28,7 +28,7 @@
     "optimize:styles": "npm-run-all -p optimize:styles:*",
     "optimize:styles:main": "csso dist/css/main.css --output dist/css/main.css",
     "optimize:styles:volume1": "csso dist/css/mining.css --output dist/css/mining.css",
-    "rev": "node-file-rev --root=dist dist/css/*.css dist/js/*.js dist/img/*.png dist/img/*.svg dist/img/mining/*.png dist/img/mining/*.svg",
+    "rev": "node-file-rev --root=dist dist/css/*.css dist/js/*.js dist/img/*.svg dist/img/**/*.png dist/img/**/*.svg",
     "prod": "npm-run-all build optimize -s build:pages"
   },
   "devDependencies": {
