@@ -37,10 +37,6 @@ article {
     gap: var(--space-l);
     font-size: var(--font-size-base);
 
-    & span {
-      color: var(--color-nav);
-    }
-
     & a {
       padding-bottom: var(--space-xs);
       text-decoration: none;
@@ -225,5 +221,14 @@ figure {
     font-size: var(--font-size-subtitle);
     text-transform: uppercase;
     line-height: 1.4;
+  }
+}
+
+#title {
+  @media (--up_to_L) {
+    min-height: 92.5vh;
+  }
+  @media (--L_and_up) {
+    min-height: 100vh;
   }
 }

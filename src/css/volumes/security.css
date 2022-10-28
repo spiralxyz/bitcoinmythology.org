@@ -1,23 +1,9 @@
 @import '../common.css';
 
 main {
-  --color-white: #fff;
-  --color-pale: #ECE8D8;
-  --color-beige: #E4D7BD;
-  --color-pink: #F54073;
+  --color-body-text: #311F28;
+  --color-body-bg: #E4D7BD;
   --color-green: #13514C;
-  --color-cream: #FFC48E;
-  --color-yellow: #EDB64C;
-  --color-orange: #FF7659;
-  --color-blue: #386475;
-  --color-greygreen: #CCD0A5;
-  --color-greyish: #BFCDBA;
-  --color-teal: #749386;
-  --color-tungsten: #311F28;
-  --color-evergreen: #0E2B28;
-
-  --color-body-text: var(--color-tungsten);
-  --color-body-bg: var(--color-beige);
 
   @media (--up_to_L) {
     grid-template-areas:
@@ -99,23 +85,14 @@ article {
 #title {
   --color-bg: #E4D7BD;
   --color-text: #272727;
-  --color-nav: var(--color-pink);
-  --color-lead: var(--color-pink);
+  --color-lead: #F54073;
 
   grid-area: title;
-
-  @media (--up_to_L) {
-    min-height: 82.5vh;
-  }
-  @media (--L_and_up) {
-    min-height: 100vh;
-  }
 }
 
 #end {
   --color-bg: #ECE8D8;
   --color-text: #272727;
-  --color-nav: var(--color-beige);
   --color-lead: var(--color-green);
 
   grid-area: end;
@@ -123,8 +100,8 @@ article {
 }
 
 #intro-1 {
-  --color-lead: var(--color-yellow);
-  --color-text: var(--color-pale);
+  --color-lead: #EDB64C;
+  --color-text: #ECE8D8;
   --color-bg: var(--color-green);
 
   grid-area: intro-1;
@@ -145,7 +122,7 @@ article {
 }
 
 #intro-2 {
-  --color-text: var(--color-cream);
+  --color-text: #FFC48E;
   --color-bg: var(--color-green);
 
   grid-area: intro-2;
@@ -190,7 +167,7 @@ article {
 
       &:hover,
       &:focus {
-        color: var(--color-orange);
+        color: #FF7659;
       }
     }
   }

@@ -119,23 +119,14 @@ main {
 #title {
   --color-bg: var(--color-beige);
   --color-text: var(--color-pink);
-  --color-nav: var(--color-tungsten);
   --color-lead: var(--color-green);
 
   grid-area: title;
-
-  @media (--up_to_L) {
-    min-height: 82.5vh;
-  }
-  @media (--L_and_up) {
-    min-height: 100vh;
-  }
 }
 
 #end {
   --color-bg: var(--color-evergreen);
   --color-text: var(--color-pink);
-  --color-nav: var(--color-beige);
   --color-lead: var(--color-green);
 
   grid-area: end;
