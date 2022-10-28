@@ -57,8 +57,11 @@ article {
     display: block;
     font-style: normal;
     text-align: center;
-    max-width: 80%;
-    margin: 0 auto;
+
+    @media (--M_and_up) {
+      max-width: 80%;
+      margin: 0 auto;
+    }
   }
 }
 
