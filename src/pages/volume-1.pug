@@ -23,7 +23,8 @@ mixin figure(id, alt, side)
 
 block main
   article#title
-    +nav(1)
+    nav
+      a(href="/volume-2-bitcoin-security/") Read Volume 2
     .bg(style=`background-image:url(${assetPath("/img/mining/title-bg.svg")})`)
       img.coin1(src=assetPath("/img/coin.svg") alt="")
       img.coin2(src=assetPath("/img/coin.svg") alt="")

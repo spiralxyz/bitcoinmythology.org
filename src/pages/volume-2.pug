@@ -23,7 +23,8 @@ mixin figure(id, alt, side)
 
 block main
   article#title
-    +nav(2)
+    nav
+      a(href="/volume-1-bitcoin-mining/") Read Volume 1
     .bg(style=`background-image:url(${assetPath("/img/security/title-bg.png")})`)
     .content
       span.prelude The Spiral Book of Bitcoin&nbsp;Mythology
