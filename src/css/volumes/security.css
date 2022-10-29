@@ -125,29 +125,8 @@ article {
     background-position: 75px 50%;
   }
 
-  & .wrap {
-    padding-left: var(--space-l);
-    padding-right: var(--space-l);
-  }
-
   & .content {
-    padding-top: 3rem;
-    text-align: center;
-    line-height: 1.55;
-
-    & h2,
     & a {
-      font-size: var(--font-size-nav);
-      font-family: var(--font-family-head);
-      font-weight: var(--font-weight-medium);
-    }
-
-    & h2 {
-      margin-bottom: 3rem;
-    }
-
-    & a {
-      display: block;
       color: var(--color-text);
 
       &:hover,
@@ -188,16 +167,9 @@ article {
   --color-lead: #13514C;
   --color-text: #262E2E;
   --color-bg: #CEB776;
+
   grid-area: hedgefundhog-1;
-
   background-position: 76% 5%, 69% 80%, 5% 89%;
-
-  @media (--up_to_M) {
-    --bg-scale: .825;
-  }
-  @media (--M_to_L) {
-    --bg-scale: .9;
-  }
 
   & .wrap {
     background-position: 81% 5%, 24% 2%, 8% 16%;
@@ -241,7 +213,6 @@ article {
   background-position: 100% 0, 1% 5%, 60% 10%;
   background-size: auto, auto, 100px;
 
-
   & .wrap {
     background-position: 102% 102%, 100% 10%;
     background-size: 150px, auto;
@@ -264,10 +235,6 @@ article {
   background-position: 15% 5%, 50% 7%, 100% 5%;
   background-size: auto, 40px, auto;
 
-  @media (--up_to_M) {
-    --bg-scale: .75;
-  }
-
   & .glyph {
     left: -1rem;
   }
@@ -289,6 +256,10 @@ article {
 
   background-position: 15% 2%, 68% 88%, -1% 93%;
   background-size: auto, auto, 5%;
+
+  & h2 {
+    font-size: 3.15rem;
+  }
 }
 
 #terrible-hiding-spot-2 {

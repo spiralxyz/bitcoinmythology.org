@@ -236,3 +236,31 @@ figure {
     line-height: 1.4;
   }
 }
+
+#intro-2 {
+  & .wrap {
+    padding-left: var(--space-l);
+    padding-right: var(--space-l);
+  }
+
+  & .content {
+    padding-top: 3rem;
+    text-align: center;
+    line-height: 1.55;
+
+    & h2,
+    & a {
+      font-size: var(--font-size-nav);
+      font-family: var(--font-family-head);
+      font-weight: var(--font-weight-medium);
+    }
+
+    & h2 {
+      margin-bottom: 3rem;
+    }
+
+    & a {
+      display: block;
+    }
+  }
+}
