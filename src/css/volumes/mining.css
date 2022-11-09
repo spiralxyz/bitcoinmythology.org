@@ -1,7 +1,25 @@
 @import '../common.css';
 
 main {
-  display: grid;
+  --color-white: #fff;
+  --color-pale: #EAE9DF;
+  --color-beige: #E0D1AE;
+  --color-pink: #F54073;
+  --color-green: #408566;
+  --color-mud: #425134;
+  --color-red: #BC4531;
+  --color-yellow: #FEB44D;
+  --color-orange: #F88D5F;
+  --color-blue: #386475;
+  --color-greygreen: #CCD0A5;
+  --color-greyish: #BFCDBA;
+  --color-teal: #749386;
+  --color-tungsten: #311F28;
+  --color-evergreen: #0E2B28;
+  --color-darkgreen: #123636;
+
+  --color-body-text: var(--color-tungsten);
+  --color-body-bg: var(--color-beige);
 
   @media (--up_to_L) {
     grid-template-areas:
@@ -38,6 +56,19 @@ main {
 
 #title,
 #end {
+  --bg-w: calc(1830px * var(--scale));
+  --bg-h: calc(965px * var(--scale));
+
+  @media (--up_to_M) {
+    --scale: .5;
+  }
+  @media (--M_to_L) {
+    --scale: 1;
+  }
+  @media (--L_and_up) {
+    --scale: 1;
+  }
+
   & .bg {
     & .coin1,
     & .coin2,
@@ -73,20 +104,15 @@ main {
 #title {
   --color-bg: var(--color-beige);
   --color-text: var(--color-pink);
+  --color-lead: var(--color-green);
 
   grid-area: title;
-
-  @media (--up_to_L) {
-    min-height: 82.5vh;
-  }
-  @media (--L_and_up) {
-    min-height: 100vh;
-  }
 }
 
 #end {
   --color-bg: var(--color-evergreen);
   --color-text: var(--color-pink);
+  --color-lead: var(--color-green);
 
   grid-area: end;
 }
@@ -121,29 +147,8 @@ main {
     background-position: 15px 65%;
   }
 
-  & .wrap {
-    padding-left: var(--space-l);
-    padding-right: var(--space-l);
-  }
-
   & .content {
-    padding-top: 3rem;
-    text-align: center;
-    line-height: 1.55;
-
-    & h2,
     & a {
-      font-size: var(--font-size-nav);
-      font-family: var(--font-family-head);
-      font-weight: var(--font-weight-medium);
-    }
-
-    & h2 {
-      margin-bottom: 3rem;
-    }
-
-    & a {
-      display: block;
       color: var(--color-text);
 
       &:hover,

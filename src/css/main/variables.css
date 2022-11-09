@@ -1,24 +1,6 @@
 :root {
-  --color-white: #fff;
-  --color-pale: #EAE9DF;
-  --color-beige: #E0D1AE;
-  --color-pink: #F54073;
-  --color-green: #408566;
-  --color-mud: #425134;
-  --color-red: #BC4531;
-  --color-yellow: #FEB44D;
-  --color-orange: #F88D5F;
-  --color-blue: #386475;
-  --color-greygreen: #CCD0A5;
-  --color-greyish: #BFCDBA;
-  --color-teal: #749386;
-  --color-tungsten: #311F28;
-  --color-evergreen: #0E2B28;
-  --color-darkgreen: #123636;
-
-  --color-body-text: var(--color-tungsten);
-  --color-body-bg: var(--color-beige);
-
+  --space-xs: .25rem;
+  --space-s: .5rem;
   --space-m: 1rem;
   --space-l: 1.8rem;
   --space-xl: 3rem;
@@ -39,7 +21,7 @@
     --font-size-subtitle: 1rem;
     --font-size-head: 2.8rem;
     --font-size-subhead: 1.4rem;
-    --font-size-nav: 2.3rem;
+    --font-size-nav: 2rem;
   }
   @media (--M_to_L) {
     --font-size-base: 15px;
