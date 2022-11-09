@@ -1,0 +1,259 @@
+main {
+  --color-body-text: #311F28;
+  --color-body-bg: #E4D7BD;
+  --color-green: #13514C;
+}
+@media screen and (max-width: 1259px) {
+  main {
+    grid-template-areas:
+      "title"
+      "intro-1"
+      "intro-2"
+      "hackersaurus-rex-1"
+      "hackersaurus-rex-2"
+      "hedgefundhog-1"
+      "hedgefundhog-2"
+      "scamera-1"
+      "scamera-2"
+      "iron-legislator-1"
+      "iron-legislator-2"
+      "mount-inaccessible-1"
+      "mount-inaccessible-2"
+      "terrible-hiding-spot-1"
+      "terrible-hiding-spot-2"
+      "end";
+}
+  }
+@media screen and (min-width: 1260px) {
+  main {
+    grid-template-areas:
+      "title title"
+      "intro-1 intro-2"
+      "hackersaurus-rex-1 hackersaurus-rex-2"
+      "hedgefundhog-2 hedgefundhog-1"
+      "scamera-1 scamera-2"
+      "iron-legislator-2 iron-legislator-1"
+      "mount-inaccessible-1 mount-inaccessible-2"
+      "terrible-hiding-spot-2 terrible-hiding-spot-1"
+      "end end";
+}
+  }
+article em {
+    display: block;
+    font-style: normal;
+    text-align: center;
+  }
+@media screen and (min-width: 640px) {
+article em {
+      max-width: 80%;
+      margin: 0 auto;
+  }
+    }
+#title,
+#end {
+  --bg-w: calc(1213px*var(--scale));
+  --bg-h: calc(793px*var(--scale));
+}
+@media screen and (max-width: 639px) {
+#title,
+#end {
+    --scale: .5;
+}
+  }
+@media screen and (min-width: 640px) and (max-width: 1259px) {
+#title,
+#end {
+    --scale: 1;
+}
+  }
+@media screen and (min-width: 1260px) {
+#title,
+#end {
+    --scale: 1.25;
+}
+  }
+#title {
+  --color-bg: #E4D7BD;
+  --color-text: #272727;
+  --color-lead: #F54073;
+
+  grid-area: title;
+}
+#end {
+  --color-bg: #ECE8D8;
+  --color-text: #272727;
+  --color-lead: var(--color-green);
+
+  grid-area: end;
+  background-position: 20% 100%, 96% 101%;
+}
+#intro-1 {
+  --color-lead: #EDB64C;
+  --color-text: #ECE8D8;
+  --color-bg: var(--color-green);
+
+  grid-area: intro-1;
+}
+@media screen and (max-width: 639px) {
+#intro-1 {
+    background-position: 5% 10%;
+    background-size: 111px 29px;
+}
+  }
+@media screen and (min-width: 640px) {
+#intro-1 {
+    background-position: 5% 10%;
+    background-size: 223px 59px;
+}
+  }
+#intro-1 .wrap {
+    background-position: 42% -1%, 87% 8%, 5% 95%;
+    background-size: 111px 29px, 111px 29px, 38px 39px;
+  }
+#intro-2 {
+  --color-text: #FFC48E;
+  --color-bg: var(--color-green);
+
+  grid-area: intro-2;
+  background-size: calc(453px*var(--bg-scale)) calc(676px*var(--bg-scale));
+  background-position: 45% 65%;
+}
+@media screen and (max-width: 639px) {
+#intro-2 {
+    --bg-scale: .825;
+}
+  }
+@media screen and (min-width: 640px) and (max-width: 1259px) {
+#intro-2 {
+    --bg-scale: 1;
+}
+  }
+@media screen and (min-width: 1260px) {
+#intro-2 {
+    --bg-scale: 1.125;
+    background-position: 75px 50%;
+}
+  }
+#intro-2 .content a {
+      color: var(--color-text);
+    }
+#intro-2 .content a:hover,
+      #intro-2 .content a:focus {
+        color: #FF7659;
+      }
+#hackersaurus-rex-1 {
+  --color-lead: #F75D3D;
+  --color-text: #B4BBBD;
+  --color-bg: #272727;
+
+  grid-area: hackersaurus-rex-1;
+}
+@media screen and (max-width: 1259px) {
+#hackersaurus-rex-1 {
+    background-position: 50% 5%, -100%;
+    background-size: 300px, 0;
+}
+  }
+@media screen and (min-width: 1260px) {
+#hackersaurus-rex-1 {
+    background-position: 50% 10%, 50% 100%;
+    background-size: auto, 275px;
+}
+  }
+#hackersaurus-rex-2 {
+  --color-text: #B4BBBD;
+  --color-bg: #272727;
+
+  grid-area: hackersaurus-rex-2;
+}
+#hedgefundhog-1 {
+  --color-lead: #13514C;
+  --color-text: #262E2E;
+  --color-bg: #CEB776;
+
+  grid-area: hedgefundhog-1;
+  background-position: 76% 5%, 69% 80%, 5% 89%;
+}
+#hedgefundhog-1 .wrap {
+    background-position: 81% 5%, 24% 2%, 8% 16%;
+    background-size: auto, 150px, auto;
+  }
+#hedgefundhog-2 {
+  --color-text: #262E2E;
+  --color-bg: #CEB776;
+
+  grid-area: hedgefundhog-2;
+}
+#scamera-1 {
+  --color-lead: #FFDD8E;
+  --color-text: #F5E7CC;
+  --color-bg: #5B574D;
+
+  grid-area: scamera-1;
+  background-position: 30% 5%, 65% 2%;
+}
+#scamera-1 .wrap {
+    background-position: 97% 100%, 2% 96%;
+  }
+#scamera-2 {
+  --color-text: #F5E7CC;
+  --color-bg: #5B574D;
+
+  grid-area: scamera-2;
+}
+#iron-legislator-1 {
+  --color-lead: #E58918;
+  --color-text: #F8E1B0;
+  --color-bg: #312D25;
+
+  grid-area: iron-legislator-1;
+  background-position: 100% 0, 1% 5%, 60% 10%;
+  background-size: auto, auto, 100px;
+}
+#iron-legislator-1 .wrap {
+    background-position: 102% 102%, 100% 10%;
+    background-size: 150px, auto;
+  }
+#iron-legislator-2 {
+  --color-text: #F8E1B0;
+  --color-bg: #312D25;
+
+  grid-area: iron-legislator-2;
+}
+#mount-inaccessible-1 {
+  --color-lead: #292320;
+  --color-text: #0B0B0A;
+  --color-bg: #9D9680;
+
+  grid-area: mount-inaccessible-1;
+  background-position: 15% 5%, 50% 7%, 100% 5%;
+  background-size: auto, 40px, auto;
+}
+#mount-inaccessible-1 .glyph {
+    left: -1rem;
+  }
+#mount-inaccessible-2 {
+  --color-text: #0B0B0A;
+  --color-bg: #9D9680;
+
+  grid-area: mount-inaccessible-2;
+}
+#terrible-hiding-spot-1 {
+  --color-lead: #E8FFB6;
+  --color-text: #E0FFE9;
+  --color-bg: #3D555B;
+
+  grid-area: terrible-hiding-spot-1;
+
+  background-position: 15% 2%, 68% 88%, -1% 93%;
+  background-size: auto, auto, 5%;
+}
+#terrible-hiding-spot-1 h2 {
+    font-size: 3.15rem;
+  }
+#terrible-hiding-spot-2 {
+  --color-text: #E0FFE9;
+  --color-bg: #3D555B;
+
+  grid-area: terrible-hiding-spot-2;
+}
